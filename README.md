@@ -1,1 +1,1 @@
-Life is Tech ! の教材で利用する `Sinatra` テンプレートです。
+Leaders for School WebS original application of K-chan
