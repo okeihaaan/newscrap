@@ -2,6 +2,8 @@ require 'bundler/setup'
 Bundler.require
 require 'sinatra/reloader' if development?
 
+require './models'
+
 
 before '/' do
   #unless session[:user].nil?
@@ -9,7 +11,7 @@ before '/' do
 end
 
 get '/' do
-  @articles = Articles.all
+  @articles = Article.all
   @categories = Category.all
   
   erb :index
@@ -97,8 +99,9 @@ post '/article/:id/update' do
         summary3: params[:summary3],
         content: params[:content],
         comment: params[:comment],
+        favorite: params[:favorite],
     })
-    @memo.save
+    @article.save
 
     redirect '/'
 end

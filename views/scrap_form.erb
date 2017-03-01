@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8">
   <title>Scraping new article - NewScrap!</title>
-  <link rel="shortcut icon" href="../public/imgs/favicon.ico">
-  <link rel="stylesheet" type="text/css" href=”../public/css/cutestrap.css”>
-  <link rel="stylesheet" type="text/css" href="../public/css/main.css">
+  <link rel="shortcut icon" href="/imgs/favicon.ico">
+  <link rel="stylesheet" type="text/css" href=”/css/cutestrap.css”>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
   <link rel="stylesheet" href="./icon_font/foundation-icons.css">
   <meta name="description" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
   <meta name="keywords" content="新聞,ニュース,Yahoo!ニュース,スクラップ,まとめ,クラウド">
   <meta name="og:type" content="website">
   <meta name="og:title" content="NewScrap!">
   <meta name="og:discription" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
-  <meta name="og:image" content="./imgs/og_img.png">
+  <meta name="og:image" content="/imgs/og_img.png">
   <meta name="twitter:card" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
   <meta name="twitter:title" content="NewScrap!">
-  <meta name="twitter:image" content="../public/imgs/og_img.png" />
+  <meta name="twitter:image" content="/imgs/og_img.png" />
 </head>
   <body>
     <header>
-      <h1><img src="./imgs/logo_white.png" alt="NewScrap"></h1>
+      <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
     </header>
     <div class="main">
       <h2>Let's scrap new article!</h2>
-      <% if == error %>
+      <% #if == error %>
         <p>There is something wrong.</p>
       <% end %>
       <form id="scrap" action="/scrap" method="post">
@@ -56,6 +56,6 @@
       </form>
     </div>
     <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="../public/main.js"></script>
+    <script type="text/javascript" src="/main.js"></script>
   </body>
 </html>
