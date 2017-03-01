@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang ="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Scraping new article - NewScrap!</title>
+  <link rel="shortcut icon" href="./imgs/favicon.ico">
+  <link rel="stylesheet" type="text/css" href=”./cutestrap.css”>
+  <link rel="stylesheet" type="text/css" href="./main.css">
+  <link rel="stylesheet" href="./icon_font/foundation-icons.css">
+  <meta name="description" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
+  <meta name="keywords" content="新聞,ニュース,Yahoo!ニュース,スクラップ,まとめ,クラウド">
+  <meta name="og:type" content="website">
+  <meta name="og:title" content="NewScrap!">
+  <meta name="og:discription" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
+  <meta name="og:image" content="./imgs/og_img.png">
+  <meta name="twitter:card" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
+  <meta name="twitter:title" content="NewScrap!">
+  <meta name="twitter:image" content="./imgs/og_img.png" />
+</head>
+  <body>
+    <header>
+      <h1><img src="./imgs/logo_white.png" alt="NewScrap"></h1>
+    </header>
+    <div class="main">
+      <h2>Let's scrap new article!</h2>
+      <% if %>
+        <p>There is something wrong.</p>
+      <% end %>
+      <form id="scrap" action="送信先" method="post">
+        <label for="scrap_url">URL</label>
+        <input id="scrap_url" type="string" name="source_url" placeholder="URL" required>
+        <!--<input type="submit" value="Y!Scrap"></input>-->
+        <label for="scrap_headline">headline</label>
+        <input id="scrap_headline" type="text" name="headline" placeholder="headline" required>
+        <label for="scrap_souce">souce</label>
+        <input id="scrap_souce" type="string" name="souce" placeholder="souce" required>
+        <label for="scrap_category">category</label>
+        <input id="scrap_category" type="string" name="category" placeholder="category" size="12" maxlength="12" required>
+        <label for="scrap_keyword1 scrap_keyword2 scrap_keyword3">keywords</label>
+        <input id="scrap_keyword1" type="string" name="keyword1" placeholder="keyword" size="12" maxlength="12" required>
+        <input id="scrap_keyword2" type="string" name="keyword2" placeholder="keyword" size="12" maxlength="12">
+        <input id="scrap_keyword3" type="string" name="keyword3" placeholder="keyword" size="12" maxlength="12">
+        <label for="scrap_summary1">1</label>
+        <input id="scrap_summary1" type="text" name="summary1" placeholder="summary1" size="25" maxlength="25"required>
+        <label for="scrap_summary2">2</label>
+        <input id="scrap_summary2" type="text" name="summary2" placeholder="summary2" size="25" maxlength="25">
+        <label for="scrap_summary3">3</label>
+        <input id="scrap_summary3" type="text" name="summary3" placeholder="summary3" size="25" maxlength="25">
+        <label for="scrap_comment"></label>
+        <textarea id="scrap_comment" name="comment" placeholder="comment" cols="25" rows="5" wrap="sort"></textarea>
+        <!-- Y!Scrap実装するときはスクラップ結果代入 -->
+        <label for="scrap_article"></label>
+        <textarea id="scrap_article" name="article" placeholder="article" cols="25" rows="10" wrap="sort"></textarea>
+        <input type="submit" value="SCRAP!">
+        <% after "/scrap" do %>
+          <p>Your scrap has saved!</p>
+        <% end %>
+      </form>
+    </div>
+    <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>

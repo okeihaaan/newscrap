@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang ="ja">
+<head>
+  <meta charset="utf-8">
+  <title>NewScrap!</title>
+  <link rel="shortcut icon" href="./imgs/favicon.ico">
+  <meta name="description" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
+  <meta name="keywords" content="新聞,ニュース,Yahoo!ニュース,スクラップ,まとめ,クラウド">
+  <meta name="og:type" content="website">
+  <meta name="og:title" content="NewScrap!">
+  <meta name="og:discription" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
+  <meta name="og:image" content="./imgs/og_img.png">
+  <meta name="twitter:card" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
+  <meta name="twitter:title" content="NewScrap!">
+  <meta name="twitter:image" content="./imgs/og_img.png" />
+  <link rel="stylesheet" type="text/css" href=”./css/cutestrap.css”>
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" href="./icon_font/foundation-icons.css">
+</head>
+  <body>
+    <header>
+      <nav>
+        <h1><img alt="newscrap_logo" src="./imgs/logo_white.png"></h1>
+        <ul>
+          <li><a href="scrap"><i class="fi-clipboard-pencil"></i>Scrap</a></li>
+          <li><a href="search"><i class="fi-magnifying-glass"></i>Search</a></li>
+          <li><a href="analize"><i class="fi-clipboard-pencil"></i>Analize</a></li>
+          <li><a href="sign_out"><i class=".fi-key">Sign Out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="main">
+      <div class="contentBox">
+        <div class="headline">
+          <!--<h2>News Headline</h2>
+          <ul>
+            <li><a href=""><%= %></a></li>
+            <li><a href=""><%= %></a></li>
+            <li><a href=""><%= %></a></li>
+            <li><a href=""><%= %></a></li>
+            <li><a href=""><%= %></a></li>
+          </ul>
+        </div> -->
+        <div class="latest">
+          <h2>Latest Acticle</h2>
+          <ul>
+            <li><a href=""><%= %></a></li>
+            <li><a href=""><%= %></a></li>
+            <li><a href=""><%= %></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="archive">
+        <h2>Archive</h2>
+          <div class="search">
+            <form action="search" method="post">
+                <label for="search_keyword"></label>
+                <input id="search_keyword" type="text" name="keyword" placeholder="key word" size="12">
+                <label for="search_category"></label>
+                <select for="search_category" name="category">
+                  <% #.category.each do %>
+                    <option value="<%= %>"><%= %></option>
+                  <% end %>
+                </select>
+                <label for="search_souce"></label>
+                <select for="search_source" name="source">
+                  <% article.souce.each do %>
+                    <option value="<%= %>"><%= %></option>
+                  <% end %>
+                </select>
+                <label for="search_date"></label>
+                <select id="search_date" name="date">
+                  <% [].each do %>
+                    <option value="<%= %>"><%= %></option>
+                  <% end %>
+                </select>
+                <input type="submit" name="submit" value="Search">
+            </form>
+          </div>
+          <table>
+            <tr>
+              <th></th>
+            </tr>
+            <!-- <% #.each do %> -->
+            <tr>
+              <td><!--<%= 日付 %>--></td>
+              <td><a href=""><!--<%= カテゴリ %>--></a></td>
+              <td><a href=""><!--<%= タイトル %>--></a></td>
+              <td><a href=""><!--<%= 配信元 %>--></a></td>
+            </tr>
+            <% end %>
+          </table>
+          <!-- 追加実装用memo >
+          <div class="modal_base"></div>
+          <div class="modal signIn>
+            <form action="sign_in" method="post">
+              <input type="string" name="sign_in_id"placeholder="User ID or Email" size="25">
+              <input type="password" name="password" placeholder="password" size="12" maxlength="12">
+              <input type="submit" value="Sing In">
+            </form>
+          </div>
+          <div class="modal signOut">
+            <p>Do you sign out?</p>
+            <a href="sign_out" class="button">Yes</a>
+            <a href="index" class="button">No</a>
+          </div>
+          <div class="modal search">
+                      <form action="" method="post">
+                <input type="text" name="keyword" placeholder="key word" size="10">
+                <select name="category">
+                  <% #[:category].each do %>
+                    <option value="<%= %>"><%= %></option>
+                  <% #end %>
+                </select>
+                <select name="source">
+                  <% #[:souce].each do %>
+                    <option value="<%= %>"><%= %></option>
+                  <% #end %>
+                </select>
+                <select name="date">
+                  <% #[].each do %>
+                    <option value="<%= %>"><%= %></option>
+                  <% #end %>
+                </select>
+                <input type="submit" name="submit" value="Search">
+            </form>
+          </div>
+          <div class="popUp article"></div>
+          <div class="popUp category"></div>
+          <-->
+      </div>
+    <footer>
+      <a href="info" target="_blank">info</a>
+      <p>(c)okeihaan 2017 all rights reserved</p>
+    </footer>
+  <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>

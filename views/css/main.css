@@ -1,0 +1,21 @@
+header, footer{
+    background-color: #000;
+    color: #fff;
+}
+
+header nav{
+    position: fixed;
+}
+header nav h1 img{
+    width: 120px;
+}
+header nav ul{
+    position: flex;
+}
+header nav ul li{
+    list-style: none;
+}
+
+.hero{
+    background-image: url(./css/base.png);
+}
