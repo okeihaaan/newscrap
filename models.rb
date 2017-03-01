@@ -22,7 +22,7 @@ class Keyword < ActiveRecord::Base
     has_many :articles, through: :article_keywords
 end
 
-#class User < ActiveRecord::Base
-#     has_many :articles
-#     has_secure_password
-# end
+class User < ActiveRecord::Base
+    has_many :articles
+    has_secure_password
+end

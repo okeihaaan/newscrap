@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227201413) do
+ActiveRecord::Schema.define(version: 20170301045959) do
 
   create_table "article_keywords", force: :cascade do |t|
     t.string "article_id"
@@ -25,8 +25,11 @@ ActiveRecord::Schema.define(version: 20170227201413) do
     t.text     "summary3"
     t.text     "comment"
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.text     "souce"
+    t.boolean  "favorite",    default: false
+    t.integer  "category_id", default: 1
   end
 
   create_table "categories", force: :cascade do |t|
@@ -35,6 +38,12 @@ ActiveRecord::Schema.define(version: 20170227201413) do
 
   create_table "keywords", force: :cascade do |t|
     t.string "keyword"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "mail"
+    t.string "password"
   end
 
 end

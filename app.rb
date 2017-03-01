@@ -43,11 +43,17 @@ get '/scrap' do
 end
 
 post '/scrap' do
-  #(article: params[:article])
+    Memo.create({
+        title: params[:title],
+        content: params[:content],
+        category_id: params[:category],
+        })
+    redirect '/'
 end
 
 
 post '/article/[:id]/detail' do
+  @article = Article.all
   erb :detail
 end
 

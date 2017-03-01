@@ -16,6 +16,9 @@ header nav ul li{
     list-style: none;
 }
 
+i{
+    size: 36px;
+}
 .hero{
     background-image: url(./css/base.png);
 }
