@@ -23,6 +23,11 @@
         <h2>Detail of Article</h2>
         <h3><% @article.title %></h2>
         <div class="icon_wrapper">
+          <% if @article.favorite == false do %>
+            <i class=".fi-star"></i>
+          <% else %>
+            <i class=".fi-star colored"></i>
+          <% end %>
           <form name="edit" action="/article/<%= @article.id %>/edit" method="post">
             <input><i class="fi-clipboard-pencil"></i></input>
           </form>
@@ -39,7 +44,7 @@
         <a href="//www.google.co.jp/"><%= @article.summary3 %></a>
         <p><%= @article.content %></p>
         <p><%= @article.comment%></p>
-        <a><i></i>close</p>
+        <a href=""><i class=".fi-x"></i>close</a>
       </div>
     </div>
     <footer>
