@@ -1,19 +1,22 @@
 header, footer{
-    background-color: #000;
-    color: #fff;
+    background-color : #000;
+    color : #fff;
+    width : 100vw;
 }
 
 header nav{
-    position: fixed;
+    position : fixed;
+    padding : 0;
+    margin: 0;
 }
 header nav h1 img{
-    width: 120px;
+    width : 120px;
 }
 header nav ul{
-    position: flex;
+    position : flex;
 }
 header nav ul li{
-    list-style: none;
+    list-style : none;
 }
 
 i{
