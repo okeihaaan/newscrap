@@ -8,45 +8,39 @@
   <meta name="og:type" content="website">
   <meta name="og:title" content="NewScrap!">
   <meta name="og:discription" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
-  <meta name="og:image" content="../public/imgs/og_img.png">
-  <link rel="shortcut icon" href="../public/imgs/favicon.ico">
-  <link rel="stylesheet" type="text/css" href=”../public/css/cutestrap.css”>
-  <link rel="stylesheet" type="text/css" href="../public/css/main.css">
-  <link rel="stylesheet" href="../public/icon_font/foundation-icons.css">
+  <meta name="og:image" content="/imgs/og_img.png">
+  <link rel="shortcut icon" href="/imgs/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/cutestrap.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" href="/icon_font/foundation-icons.css">
 </head>
-  <body>
-    <nav class="nav_wrapper">
-      <h1><a href="/"><img alt="newscrap_logo" src="/imgs/logo_white.png"></a></h1>
-      <ul class="nav_ul_wrappear">
-        <li><a href="scrap"><i class="fi-clipboard-pencil"></i>Scrap</a></li>
-        <li><a href="search"><i class="fi-magnifying-glass"></i>Search</a></li>
-        <li><a href="analize"><i class="fi-clipboard-pencil"></i>Analize</a></li>
-        <li><a href="sign_out"><i class="fi-lock"></i>Sign Out</a></li>
-      </ul>
-    </nav>
-    <header>
-      <h1><img alt="newscrap_logo" src="./imgs/logo_white.png"></h1>
-    </header>
-    <div class="main">
-      <h2>message to developer</h2>
-      <form action="mailto:oheihaaan@gmail.com" method="post">
-        <label for="form_name">name</label>
-        <input id="form_name" type="string" placeholder="name"reserved>
-        <label for="form_address">E-mail</label>
-        <input id="form_address" type="string" reserved>
-        <label for="form_title">title</label>
-        <input id="form_title" type="text" placeholder="title" size="25" maxlrngth="25" reserved>
-        <lebel for="form_text">message</label>
-        <textarea id="form_text" placeholder="message"cols="25" rows="8" reserved></textarea>
-        <input type="submit" value="SEND">
-        <% post "/info" do %>
-          <p>Your scrap has saved!</p>
-        <% end %>
-    </div>
-    <footer>
-      <p>(c)okeihaaan 2017 all rights reserved</p>
-    </footer>
-    <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="../public/main.js"></script>
-  </body>
+
+<body>
+  <nav>
+    <h1><img alt="newscrap_logo" src="./imgs/logo_white.png"></h1>
+  </nav>
+  
+  <div class="main">
+    <h2>message to developer</h2>
+    <form action="" method="post"><br>
+      <label for="form_name">name</label>
+      <input id="form_name" type="string" name="name" placeholder="Your name." size="40" reserved><br>
+      <label for="belong">name</label><br>
+      <input id="belong" type="string" name="belong" placeholder="school, company and so on" size="40" reserved><br>
+      <label for="form_address">E-mail</label><br>
+      <input id="form_address" type="string" name=name"" reserved>
+      <label for="form_title">title</label<br>
+      <input id="form_title" type="text" name="title" placeholder="max 25 charactors" size="50" maxlrngth="25" reserved><br>
+      <lebel for="form_text">message</label><br>
+      <textarea id="form_text" name="message" placeholder="Please send me any kinds of massages." cols="50" rows="8" reserved></textarea><br><br>
+      <input type="submit" value="SEND">
+  </div>
+  
+  <footer>
+    <p>(c)okeihaaan 2017 all rights reserved</p>
+  </footer>
+  
+  <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/main.js"></script>
+</body>
 </html>

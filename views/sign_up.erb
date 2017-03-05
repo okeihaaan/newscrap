@@ -8,31 +8,34 @@
   <meta name="og:type" content="website">
   <meta name="og:title" content="NewScrap!">
   <meta name="og:discription" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
-  <meta name="og:image" content="../public/imgs/og_img.png">
-  <link rel="shortcut icon" href="../public/imgs/favicon.ico">
+  <meta name="og:image" content="/imgs/og_img.png">
+  <link rel="shortcut icon" href="/imgs/favicon.ico">
   <link rel="stylesheet" type="text/css" href="/css/cutestrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <link rel="stylesheet" href="/icon_font/foundation-icons.css">
 </head>
-  <body>
-    <nav>
-      <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
-    </nav>
-    <div class="main">
-      <h2>Let't create your account!</h2>
-      <form action="/sign_up" method="post">
-        <label for="user_name">user name</label><br>
-        <input id="user_name" type="string" name="username" placeholder="4~12 letters" size="12" maxlrngth="12" reserved><br>
-        <label for="user_address">E-mail</label><br>
-        <input id="user_address" type="string" reserved><br>
-        <label for="user_password">password</label><br>
-        <input id="user_password1" type="password" name="mail"  placeholder="6~12 letters" size="12" maxlrngth="12" reserved><br>
-        <lebel for="form_text">password confirmation</label><br>
-        <input id="user_password2" type="password" name="password" placeholder="fill your password again" size="12" maxlrngth="12" reserved><br><br>
-        <input type="submit" value="Create account">
-      </form>
-    </div>
-    <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="/main.js"></script>
-  </body>
+
+<body>
+  <nav>
+    <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
+  </nav>
+  
+  <div class="main">
+    <h2>Let't create your account!</h2>
+    <form action="/sign_up" method="post">
+      <label for="user_name">user name</label><br>
+      <input id="user_name" type="string" name="username" placeholder="4~12 letters" size="40" maxlrngth="12" reserved><br>
+      <label for="user_address">E-mail</label><br>
+      <input id="user_address" type="string" reserved><br>
+      <label for="user_password">password</label><br>
+      <input id="user_password1" type="password" name="mail"  placeholder="6~12 letters" size="40" maxlrngth="12" reserved><br>
+      <lebel for="form_text">password confirmation</label><br>
+      <input id="user_password2" type="password" name="password" placeholder="fill your password again" size="40" maxlrngth="12" reserved><br><br>
+      <input type="submit" value="Create account">
+    </form>
+  </div>
+  
+  <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/main.js"></script>
+</body>
 </html>
