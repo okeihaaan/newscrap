@@ -53,7 +53,8 @@ post '/sign_in' do
     session[:user] = user.id
   end
   
-  redirect '/'
+  erb :index
+  # make it up lator
 end
 
 
