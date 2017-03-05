@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang ="ja">
-<head>
-  <meta charset="utf-8">
-  <title>NewScrap!</title>
-  <link rel="shortcut icon" href="/imgs/favicon.ico">
-  <meta name="description" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
-  <meta name="keywords" content="新聞,ニュース,Yahoo!ニュース,スクラップ,まとめ,クラウド">
-  <meta name="og:type" content="website">
-  <meta name="og:title" content="NewScrap!">
-  <meta name="og:discription" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
-  <meta name="og:image" content="/imgs/og_img.png">
-  <meta name="twitter:card" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
-  <meta name="twitter:title" content="NewScrap!">
-  <meta name="twitter:image" content="/imgs/og_img.png" />
-  <link rel="stylesheet" type="text/css" href="/css/cutestrap.css">
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" href="/icon_font/foundation-icons.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>NewScrap!</title>
+    <link rel="shortcut icon" href="/imgs/favicon.ico">
+    <meta name="description" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
+    <meta name="keywords" content="新聞,ニュース,Yahoo!ニュース,スクラップ,まとめ,クラウド">
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="NewScrap!">
+    <meta name="og:discription" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
+    <meta name="og:image" content="/imgs/og_img.png">
+    <meta name="twitter:card" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
+    <meta name="twitter:title" content="NewScrap!">
+    <meta name="twitter:image" content="/imgs/og_img.png" />
+    <link rel="stylesheet" type="text/css" href="/css/cutestrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="/icon_font/foundation-icons.css">
+  </head>
+
   <body>
     <div id="loading">
         <div class="ld-text"><span class="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
@@ -52,58 +53,59 @@
       </nav>
 
     
-    <header class="flex">
-      <div class="carender flex">
-        <div class="carender-1 flex ta_center">
-          <div id="year"></div>
-          <p>年</p>
-          <div id="month"></div>
-          <p>月</p>
-        </div>
-        <div class="carender-2">
-          <div id="date"></div>
-          <p>日</p>
-        </div>
-      </div>
+  <!--  <header class="flex">-->
+  <!--    <div class="carender flex">-->
+  <!--      <div class="carender-1 flex ta_center">-->
+  <!--        <div id="year"></div>-->
+  <!--        <p>年</p>-->
+  <!--        <div id="month"></div>-->
+  <!--        <p>月</p>-->
+  <!--      </div>-->
+  <!--      <div class="carender-2">-->
+  <!--        <div id="date"></div>-->
+  <!--        <p>日</p>-->
+  <!--      </div>-->
+  <!--    </div>-->
       
-      <div class="headline">
-        <h2>News Headline</h2>
-        <div id="rss"></div>
-    </div>
-  </header>
+  <!--    <div class="headline">-->
+  <!--      <h2>News Headline</h2>-->
+  <!--      <div id="rss"></div>-->
+  <!--  </div>-->
+  <!--</header>-->
     
     <div class="main">
       <div class="contentBox">
        
-      <div class="archive">
-        <h2>Archive</h2>
-          <div id="search">
-            <form action="search" method="post">
-                <label for="search_keyword"></label>
-                <input id="search_keyword" type="text" name="keyword" placeholder="key word" size="12">
-                <label for="search_category"></label>
-                <select for="search_category" name="category">
-                  <% #.category.each do %>
-                    <option value="<%= %>"><%= %></option>
-                  <% #end %>
-                </select>
-                <label for="search_souce"></label>
-                <select for="search_source" name="source">
-                  <!--<% #@articles.each do |article| %>-->
-                  <!--  <% #article.souce.each do %>-->
-                  <!--    <option value="<%= %>"><%= %></option>-->
-                  <!--  <% #end %>-->
-                  <% #end %>
-                </select>
-                <label for="search_date"></label>
-                <select id="search_date" name="date">
-                  <% #.each do %>
-                    <option value="<%= %>"><%= %></option>
-                  <% #end %>
-                </select>
-                <input type="submit" name="submit" value="Search">
-            </form>
-          </div>
+        <div class="archive">
+          <h2>Archive</h2>
+            <div id="search">
+              <form action="/article/search" method="post">
+                  <input id="search_keyword" type="text" name="keyword" placeholder="key word" size="12">
+                  <label class="select_category">
+                    <select for="search_category" name="category">
+                      <% @categories.name.each | params[:name] | do %>
+                        <option value="<%= params[:name] %>"><%= params[:name] %></option>
+                      <% end %>
+                    </select>
+                    <span class="select_category">Select Category</span>
+                  </label>
+                  <label for="search_souce"></label>
+                  <select for="search_source" name="source">
+                    <% #@articles.each do |article| %>
+                      <% #article.souce.each do %>
+                        <option value="<%= %>"><%= %></option>
+                      <% #end %>
+                    <% #end %>
+                  </select>
+                  <label for="search_date"></label>
+                  <select id="search_date" name="date">
+                    <% #.each do %>
+                      <option value="<%= %>"><%= %></option>
+                    <% #end %>
+                  </select>
+                  <input type="submit" name="submit" value="Search">
+              </form>
+            </div>
           <!--<table>-->
           <!--  <tr>-->
           <!--    <th></th>-->
@@ -128,9 +130,9 @@
         
       </div>
       </div>
-    <footer>
-      <a href="info" target="_blank">info</a>
-      <p>(c)okeihaan 2017 all rights reserved</p>
+    <footer class="flex ta_left">
+      <p>(c)okeihaaan 2017 all rights reserved</p>
+      <a href="javascript:w=window.open('/info_form','','scrollbars=yes,Width=500,Height=600');w.focus();">info</a>
     </footer>
   </div>
   

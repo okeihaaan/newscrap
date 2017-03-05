@@ -25,6 +25,11 @@ get '/' do
   
 end
 
+get '/index' do
+  @articles = Article.all
+  @categories = Category.all
+end
+
 
 get '/sign_up' do
   erb :sign_up
@@ -90,13 +95,18 @@ post '/scrap' do
 end
 
 
-post '/article/[:id]/detail' do
+# post '/article/search' do
+  
+# end
+
+
+post '/article/:id/detail' do
   @article = Article.all
   erb :detail
 end
 
 
-get '/memo/:id/edit' do
+get '/article/:id/edit' do
   @categories = Category.all
   @articles = Article.find_by({id: params[:id]})
   
