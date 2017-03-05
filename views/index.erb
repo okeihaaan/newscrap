@@ -35,8 +35,8 @@
         </ul>
       </div>
       <ul class="nav_ul_wrappear flex ta_right">
-        li><a href="/scrap"><i class="fi-clipboard-pencil"></i><div class="grid--medium">Scrap</div></a></li>
-        <li><a href="/search"><i class="fi-magnifying-glass"></i><div class="grid--medium">Search</div></a></li>
+        li><a href="javascript:w=window.open('/scrap','','scrollbars=yes,Width=500,Height=600');w.focus();"><i class="fi-clipboard-pencil"></i><div class="grid--medium">Scrap</div></a></li>
+        <li><a href="#search"><i class="fi-magnifying-glass"></i><div class="grid--medium">Search</div></a></li>
         <li><a href="/analize"><i class=".fi-graph-bar"></i><div class="grid--medium">Analize</div></a></li>
         <li><a href="/sign_out"><i class="fi-lock"></i><div class="grid--medium">Sign Out</div></a></li>
       </ul>
@@ -61,7 +61,7 @@
        
       <div class="archive">
         <h2>Archive</h2>
-          <div class="search">
+          <div id="search">
             <form action="search" method="post">
                 <label for="search_keyword"></label>
                 <input id="search_keyword" type="text" name="keyword" placeholder="key word" size="12">
