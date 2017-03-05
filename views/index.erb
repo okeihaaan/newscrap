@@ -43,19 +43,25 @@
     </nav>
     
     <header class="flex">
-      <div class="">
+      <div class="carender flex">
+        <div class="carender-1 flex ta_center">
+          <div id="year"></div>
+          <p>年</p>
+          <div id="month"></div>
+          <p>月</p>
+        </div>
+        <div class="carender-2">
+          <div id="date"></div>
+          <p>日</p>
+        </div>
       </div>
-       <!--<div class="headline">-->
-        <!--  <h2>News Headline</h2>-->
-        <!--  <ul>-->
-        <!--    <li><a href=""><%= %></a></li>-->
-        <!--    <li><a href=""><%= %></a></li>-->
-        <!--    <li><a href=""><%= %></a></li>-->
-        <!--    <li><a href=""><%= %></a></li>-->
-        <!--    <li><a href=""><%= %></a></li>-->
-        <!--  </ul>-->
-        <!--</div>-->
+      
+      <div class="headline">
+        <h2>News Headline</h2>
+          <div id="rss"></div>
+      </div>
     </header>
+    
     <div class="main">
       <div class="contentBox">
        
@@ -97,43 +103,7 @@
             <!--</tr>-->
             <!--<% #end %>-->
           <!--</table>-->
-          <!--memo >
-          <div class="modal_base"></div>
-          <div class="modal signIn>
-            <form action="sign_in" method="post">
-              <input type="string" name="sign_in_id"placeholder="User ID or Email" size="25">
-              <input type="password" name="password" placeholder="password" size="12" maxlength="12">
-              <input type="submit" value="Sing In">
-            </form>
-          </div>
-          <div class="modal signOut">
-            <p>Do you sign out?</p>
-            <a href="sign_out" class="button">Yes</a>
-            <a href="index" class="button">No</a>
-          </div>
-          <div class="modal search">
-                      <form action="" method="post">
-                <input type="text" name="keyword" placeholder="key word" size="10">
-                <select name="category">
-                  <% #[:category].each do %>
-                    <option value="<%= %>"><%= %></option>
-                  <% #end %>
-                </select>
-                <select name="source">
-                  <% #[:souce].each do %>
-                    <option value="<%= %>"><%= %></option>
-                  <% #end %>
-                </select>
-                <select name="date">
-                  <% #[].each do %>
-                    <option value="<%= %>"><%= %></option>
-                  <% #end %>
-                </select>
-                <input type="submit" name="submit" value="Search">
-            </form>
-          </div>
-          <div class="popUp article"></div>
-          <div class="popUp category"></div>
+          
           
       <!--<div class="side-contents grid--medium">    -->
       <!--  <div class="latest">-->
