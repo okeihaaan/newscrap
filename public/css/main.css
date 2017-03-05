@@ -1,7 +1,26 @@
-i{
-    size: 36px;
+/*general*/
+html, body{
+    margin: 0;
+    padding: 0;
 }
 
+.i_default{
+    font-size: 36px;
+}
+
+.flex{
+    display: flex;
+      -webkit-padding-start: 0;
+}
+.wd_100{
+    width: 100%;
+}
+.circle{
+    
+    background-color: #;
+}
+
+/*compornents*/
 nav{
     position: fixed;
     top: 0;
@@ -13,84 +32,98 @@ nav{
     height: 50px;
     background-color: #000;
 }
-.nav_wrapper{
-    position:flex;
-    display: block;
-}
+/*ポップアップ用*/
 nav h1{
     display: inline-block;
-    margin: 0;
+    margin: 0 50px 0;
     padding: 0;
     height: 50px;
 }
+/*主画面用*/
+.nav_left{
+    margin: 0;
+    padding: 0 auto 0 50px;
+    line-height: 50px;
+    width: 50%;
+}
 nav h1 a img{
-    margin: 15px 10px 7px 30px;
-    width: 120px;
+    margin: 15px 15px 7px 0;
+    padding: 0;
+    width: 130px
 }
 .nav_ul_wrapper{
     margin: 0;
-    padding: 0;
-    display: inline-block;
-    position: flex;
-    text-align: center;
+    padding: 0 20px 0 auto;
+    width: 50%;
     line-height: 50px;
 }
 nav ul{
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 auto;
     display: inline-block;
     position:absolute;
-    right: 20px;
 }
 nav ul li{
     margin: 0;
-    padding: 0 10px 0;
+    padding: 0 15px 0;
     display: inline-block;
     line-height: 50px;
     list-style: none;
 }
-nav ul li a{
-    text-decoration:none;
-    transition: 1s;
-}
-nav ul li a :hover{
-    color: #4076D4;
-}
-nav ul li a :visited{
-    color: #4076D4;
-}
-nav ul li a :hover{
-    color: #4076D4;
-    transition: 1s;
-}
-nav ul li a :active{
-    color: #4076D4;
-}
+
 .share_wrapper{
     margin: 0;
     padding: 0;
-    display: inline-block;
-    position: flex;
     text-align: center;
     line-height: 50px;
 }
 .share_wrapper ul{
-    margin: 0;
+    margin: 0 0 0 15px;
     padding: 0;
     display: inline-block;
     position:absolute;
-    left: 20px;
 }
-
-header, footer{
-    background-color: #000;
-    color: #fff;
-    width: 100vw;
+.share_wrapper ul li{
+    display: inline-block;
+    margin: 0 15px 0;
+    padding: 0;
 }
 
 header{
-    
+    width: 100%;
+    margin: 50px 0 0;
+    padding: 0 10% 0;
 }
 .hero{
+    width: 100%;
+    height: 600px;
     background-image: url(./css/base.png);
+}
+.hero h2{
+    width: 100%;
+    line-height: 400px;
+    text-align: center;
+    font-size: 6vw;
+    color: #fff;
+    /*text-shadow: #;*/
+}
+.main{
+    width: 100%;
+    margin: 0 0 50px;
+    padding: 0 10% 0;
+}
+
+footer{
+    margin: 50px 0 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+}
+footer a, footer p{
+    display: inline-block;
+    margin: 0 50px 0;
 }

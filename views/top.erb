@@ -16,28 +16,29 @@
 </head>
 
   <body>
-    <nav class="nav_wrapper">
+    <nav class="nav_wrapper flex">
+      <div class ="nav_left flex ta_left">
       <h1><a href="/"><img alt="newscrap_logo" src="/imgs/logo_white.png"></a></h1>
-      <div class="share-wrappear">
+      <div class="share-wrappear flex ta_center">
         <ul>
           <li>
-            <a href="http://twitter.com/share?text=NewScrap!でお気に入りの記事をスクラップしよう！&url=&hashtags=NewScrap&via=0keihaaan" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="fi-social-twitter"></i></a>
+            <a href="http://twitter.com/share?text=NewScrap!でお気に入りの記事をスクラップしよう！&url=&hashtags=NewScrap&via=0keihaaan" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="i_default fi-social-twitter"></i></a>
           </li>
           <li>
-            <a href="https://www.facebook.com/dialog/feed?app_id=419866574778905&link=&&name=NewScrap!&caption=NewScrap!でお気に入りの記事をスクラップしよう！&redirect_uri=http://mocofp.com/&display=page"><i class="fi-social-facebook"></i></a>
+            <a href="https://www.facebook.com/dialog/feed?app_id=419866574778905&link=&&name=NewScrap!&caption=NewScrap!でお気に入りの記事をスクラップしよう！&redirect_uri=http://mocofp.com/&display=page"><i class="i_default fi-social-facebook"></i></a>
           </li>
           <li>
-            <a href="mailto:umknown?subject=NewScrap!を使おう！&amp;NewScrap!でお気に入りの記事をスクラップしよう"><i class="fi-mail"></i></a>
+            <a href="mailto:umknown?subject=NewScrap!を使おう！&amp;NewScrap!でお気に入りの記事をスクラップしよう"><i class="i_default fi-mail"></i></a>
           </li>
         </ul>
       </div>
-      <ul class="nav_ul_wrappear">
-        <li><a href="scrap" class="btn"><i class="fi-torsos"></i>Sign Up</a></li>
-        <li><a href="sign_out" class="btn--secondary"><i class="fi-key"></i>Sign In</a></li>
+      <ul class="nav_ul_wrappear flex ta_right">
+        <li><a href="scrap" class="btn"><i class="i_default fi-torsos"></i>Sign Up</a></li>
+        <li><a href="sign_out" class="btn--secondary"><i class="i_default fi-key"></i>Sign In</a></li>
       </ul>
     </nav>
     <header>
-      <div class="hero">
+      <div class="hero ta_center">
         <h2>The Dawn of a New Scrap Era</h2>
       </div>
     </header>
@@ -53,19 +54,21 @@
         
         <div class="how_to">
           <h3>How to use NewScrap?</h3>
-            <div class="card-wrapper">
+            <div class="card-wrapper flex">
             </div>
         </div>
       </div>
       
       <div class="recommend">
-        <h3>Why don't you change to scrap ?</h3>
-        <a href="/sign_up" class="button">Sign Up</a>
-        <a href="/sign_in" class="button">Sign In</a>
+        <h3 class="ta_center">Why don't you change to scrap ?</h3>
+        <div class="flex wd_100 ta_center">
+          <a href="/sign_up" class="button">Sign Up</a>
+          <a href="/sign_in" class="button">Sign In</a>
+        </div>
       </div>
     </div>
 
-    <footer>
+    <footer class="flex ta_left">
       <a href="/info" target="_blank">info</a>
       <p>(c)okeihaaan 2017 all rights reserved</p>
     </footer>
