@@ -16,64 +16,86 @@
 </head>
 
   <body>
-    <nav class="nav_wrapper flex">
-      <div class ="nav_left flex ta_left">
-      <h1><a href="/"><img alt="newscrap_logo" src="/imgs/logo_white.png"></a></h1>
-      <div class="share-wrappear flex ta_center">
-        <ul>
-          <li>
-            <a href="http://twitter.com/share?text=NewScrap!でお気に入りの記事をスクラップしよう！&url=&hashtags=NewScrap&via=0keihaaan" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="i_default fi-social-twitter"></i></a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/dialog/feed?app_id=419866574778905&link=&&name=NewScrap!&caption=NewScrap!でお気に入りの記事をスクラップしよう！&redirect_uri=http://mocofp.com/&display=page"><i class="i_default fi-social-facebook"></i></a>
-          </li>
-          <li>
-            <a href="mailto:umknown?subject=NewScrap!を使おう！&amp;NewScrap!でお気に入りの記事をスクラップしよう"><i class="i_default fi-mail"></i></a>
-          </li>
-        </ul>
-      </div>
-      <ul class="nav_ul_wrappear flex ta_right">
-        <li><a href="javascript:w=window.open('/sign_in','','scrollbars=yes,Width=500,Height=600');w.focus();" class="btn"><i class="i_default fi-torsos"></i>Sign Up</a></li>
-        <li><a href="/sign_out" class="btn--secondary"><i class="i_default fi-key"></i>Sign In</a></li>
-      </ul>
-    </nav>
-    
-    <header>
-      <div class="hero ta_center">
-        <h2>The Dawn of a New Scrap Era</h2>
-      </div>
-    </header>
-    
-    <div class="main">
-      <div class="intro">
-        <h2>気になる記事をクラウド一括管理！新感覚のWebスクラップブック</h2>
-        
-        <div class="about">
-          <h3>What's NewScrap?</h3>
-          //Youtube貼り付け
+    <div id="loading">
+        <div class="ld-text">
+          <span class="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
         </div>
-        
-        <div class="how_to">
-          <h3>How to use NewScrap?</h3>
-            <div class="card-wrapper flex">
-            </div>
-        </div>
-      </div>
-      
-      <div class="recommend">
-        <h3 class="ta_center">Why don't you change to scrap ?</h3>
-        <div class="flex wd_100 ta_center">
-          <a href="/sign_up" class="button">Sign Up</a>
-          <a href="/sign_in" class="button">Sign In</a>
-        </div>
-      </div>
     </div>
+    
+    <div id="content">
+      <nav class="nav_wrapper flex">
+        <div class ="nav_left flex ta_left">
+          <h1><a href="/"><img alt="newscrap_logo" src="/imgs/logo_white.png"></a></h1>
+          <div class="share-wrappear flex ta_center">
+            <ul>
+              <li>
+                <a href="http://twitter.com/share?text=NewScrap!でお気に入りの記事をスクラップしよう！&url=&hashtags=NewScrap&via=0keihaaan" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="i_default fi-social-twitter"></i></a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/dialog/feed?app_id=419866574778905&link=&&name=NewScrap!&caption=NewScrap!でお気に入りの記事をスクラップしよう！&redirect_uri=http://mocofp.com/&display=page"><i class="i_default fi-social-facebook"></i></a>
+              </li>
+              <li>
+                <a href="mailto:umknown?subject=NewScrap!を使おう！&amp;NewScrap!でお気に入りの記事をスクラップしよう"><i class="i_default fi-mail"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul class="nav_ul_wrappear flex ta_right">
+          <li><a href="javascript:w=window.open('/sign_up','','scrollbars=yes,Width=500,Height=600');w.focus();" class="btn"><i class="i_default fi-torsos"></i>Sign Up</a></li>
+          <li><a href="/sign_in" class="btn"><i class="i_default fi-unlock"></i>Sign In</a></li>
+        </ul>
+      </nav>
+      
+      <header>
+        <div class="hero ta_center">
+          <h2>The Dawn of a New Scrap Era</h2>
+        </div>
+      </header>
+      
+      <div class="main">
+        <div class="contentBox intro wd_80">
+          <div class="about">
+            <h2>新感覚のWebスクラップブック</h2>
+            <h4>気になる記事をクラウド一括管理</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vZ-b_Oy_oGY?ecver=1" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div class="contentBox howTo">
+            <h3>NewScrapの使い方</h3>
+              <div class="card-wrapper flex">
+                <div class="circle"><p>1<p></div>
+                <h5>アカウント登録</h6>
+              </div>
+              <div class="card-wrapper flex">
+                <div class="circle"><p>2<p></div>
+                <h5>ログイン</h6>
+              </div>
+              <div class="card-wrapper flex">
+                <div class="circle"><p>3<p></div>
+                <h5>記事をスクラップ</h6>
+              </div>
+              <div class="card-wrapper flex">
+                <div class="circle"><p>4<p></div>
+                <h5>スクラップした記事を見返そう</h6>
+              </div>
+          </div>
+        </div>
+        
+        <div class="contentBox recommend">
+          <h3 class="ta_center">Why don't you change to scrap ?</h3>
+          <div class="recommend_btns flex wd_100 ta_center">
+            <a href="/sign_up" class="btn">Sign Up</a>
+            <a href="/sign_in" class="btn">Sign In</a>
+          </div>
+        </div>
+      </div>
 
-    <footer class="flex ta_left">
-      <a href="/info" target="_blank">info</a>
-      <p>(c)okeihaaan 2017 all rights reserved</p>
-    </footer>
-
+      <footer class="flex ta_left">
+        <p>(c)okeihaaan 2017 all rights reserved</p>
+        <a href="javascript:w=window.open('/info_form','','scrollbars=yes,Width=500,Height=600');w.focus();">info</a>
+      </footer>
+    </div>
+    
     <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="/main.js"></script>
   </body>

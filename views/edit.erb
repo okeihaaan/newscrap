@@ -15,41 +15,48 @@
   <link rel="stylesheet" href="/icon_font/foundation-icons.css">
 </head>
   <body>
-    <nav>
-      <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
-    </nav>
-    <div class="main">
-      <h2>Let's edit an article.</h2>
-      <% if %>
-        <p>There is something wrong.</p>
-      <% end %>
-      <form id="edit" action="送信先" method="post">
-        <label for="edit_url">URL</label>
-        <input id="edit_url" type="string" name="source_url" placeholder="URL" required></input>
-        <!--<input type="submit" value="Y!Scrap"></input>-->
-        <label for="edit_headline">headline</label>
-        <input id="edit_headline" type="text" name="headline" placeholder="headline" required></input>
-        <label for="edit_souce">souce</label>
-        <input id="edit_souce" type="string" name="souce" placeholder="souce" required></input>
-        <label for="edit_category">category</label>
-        <input id="edit_category" type="string" name="category" placeholder="category" size="12" maxlength="12" required></input>
-        <label for="edit_keyword1 scrap_keyword2 scrap_keyword3">keywords</label>
-        <input id="edit_keyword1" type="string" name="keyword1" placeholder="keyword" size="12" maxlength="12" required></input>
-        <input id="edit_keyword2" type="string" name="keyword2" placeholder="keyword" size="12" maxlength="12"></input>
-        <input id="edit_keyword3" type="string" name="keyword3" placeholder="keyword" size="12" maxlength="12"></input>
-        <label for="edit_summary1">1</label>
-        <input id="edit_summary1" type="text" name="summary1" placeholder="summary1" size="25" maxlength="25"required></input>
-        <label for="edit_summary2">2</label>
-        <input id="edit_summary2" type="text" name="summary2" placeholder="summary2" size="25" maxlength="25"></input>
-        <label for="edit_summary3">3</label>
-        <input id="edit_summary3" type="text" name="summary3" placeholder="summary3" size="25" maxlength="25"></input>
-        <label for="edit_comment"></label>
-        <textarea id="edit_comment" name="comment" placeholder="comment" cols="25" rows="5" wrap="sort"></textarea>
-        <!-- Y!Scrap実装するときはスクラップ結果代入 -->
-        <label for="edit_article"></label>
-        <textarea id="edit_article" name="article" placeholder="article" cols="25" rows="10" wrap="sort"></textarea>
-        <input type="submit" value="edit"></input>
-      </form>
+    <div id="loading">
+        <div class="ld-text"><span class="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
+        </div>
+    </div>
+    
+    <div id="content">
+      <nav>
+        <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
+      </nav>
+      <div class="main">
+        <h2>Let's edit an article.</h2>
+        <% if %>
+          <p>There is something wrong.</p>
+        <% end %>
+        <form id="edit" action="送信先" method="post">
+          <label for="edit_url">URL</label>
+          <input id="edit_url" type="string" name="source_url" placeholder="URL" required></input>
+          <!--<input type="submit" value="Y!Scrap"></input>-->
+          <label for="edit_headline">headline</label>
+          <input id="edit_headline" type="text" name="headline" placeholder="headline" required></input>
+          <label for="edit_souce">souce</label>
+          <input id="edit_souce" type="string" name="souce" placeholder="souce" required></input>
+          <label for="edit_category">category</label>
+          <input id="edit_category" type="string" name="category" placeholder="category" size="12" maxlength="12" required></input>
+          <label for="edit_keyword1 scrap_keyword2 scrap_keyword3">keywords</label>
+          <input id="edit_keyword1" type="string" name="keyword1" placeholder="keyword" size="12" maxlength="12" required></input>
+          <input id="edit_keyword2" type="string" name="keyword2" placeholder="keyword" size="12" maxlength="12"></input>
+          <input id="edit_keyword3" type="string" name="keyword3" placeholder="keyword" size="12" maxlength="12"></input>
+          <label for="edit_summary1">1</label>
+          <input id="edit_summary1" type="text" name="summary1" placeholder="summary1" size="25" maxlength="25"required></input>
+          <label for="edit_summary2">2</label>
+          <input id="edit_summary2" type="text" name="summary2" placeholder="summary2" size="25" maxlength="25"></input>
+          <label for="edit_summary3">3</label>
+          <input id="edit_summary3" type="text" name="summary3" placeholder="summary3" size="25" maxlength="25"></input>
+          <label for="edit_comment"></label>
+          <textarea id="edit_comment" name="comment" placeholder="comment" cols="25" rows="5" wrap="sort"></textarea>
+          <!-- Y!Scrap実装するときはスクラップ結果代入 -->
+          <label for="edit_article"></label>
+          <textarea id="edit_article" name="article" placeholder="article" cols="25" rows="10" wrap="sort"></textarea>
+          <input type="submit" value="edit"></input>
+        </form>
+      </div>
     </div>
     <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="/main.js"></script>

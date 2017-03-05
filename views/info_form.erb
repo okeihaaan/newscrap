@@ -16,29 +16,36 @@
 </head>
 
 <body>
-  <nav>
-    <h1><img alt="newscrap_logo" src="./imgs/logo_white.png"></h1>
-  </nav>
-  
-  <div class="main">
-    <h2>message to developer</h2>
-    <form action="" method="post"><br>
-      <label for="form_name">name</label>
-      <input id="form_name" type="string" name="name" placeholder="Your name." size="40" reserved><br>
-      <label for="belong">name</label><br>
-      <input id="belong" type="string" name="belong" placeholder="school, company and so on" size="40" reserved><br>
-      <label for="form_address">E-mail</label><br>
-      <input id="form_address" type="string" name=name"" reserved>
-      <label for="form_title">title</label<br>
-      <input id="form_title" type="text" name="title" placeholder="max 25 charactors" size="50" maxlrngth="25" reserved><br>
-      <lebel for="form_text">message</label><br>
-      <textarea id="form_text" name="message" placeholder="Please send me any kinds of massages." cols="50" rows="8" reserved></textarea><br><br>
-      <input type="submit" value="SEND">
+  <div id="loading">
+    <div class="ld-text"><span class="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
+    </div>
   </div>
   
-  <footer>
-    <p>(c)okeihaaan 2017 all rights reserved</p>
-  </footer>
+  <div id="content">
+    <nav>
+      <h1><img alt="newscrap_logo" src="./imgs/logo_white.png"></h1>
+    </nav>
+    
+    <div class="main">
+      <h2>message to developer</h2>
+      <form action="" method="post"><br>
+        <label for="form_name">name</label>
+        <input id="form_name" type="string" name="name" placeholder="Your name." size="40" reserved><br>
+        <label for="belong">name</label><br>
+        <input id="belong" type="string" name="belong" placeholder="school, company and so on" size="40" reserved><br>
+        <label for="form_address">E-mail</label><br>
+        <input id="form_address" type="string" name=name"" reserved>
+        <label for="form_title">title</label<br>
+        <input id="form_title" type="text" name="title" placeholder="max 25 charactors" size="50" maxlrngth="25" reserved><br>
+        <lebel for="form_text">message</label><br>
+        <textarea id="form_text" name="message" placeholder="Please send me any kinds of massages." cols="50" rows="8" reserved></textarea><br><br>
+        <input type="submit" value="SEND">
+    </div>
+    
+    <footer>
+      <p>(c)okeihaaan 2017 all rights reserved</p>
+    </footer>
+  </div>
   
   <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/javascript" src="/main.js"></script>

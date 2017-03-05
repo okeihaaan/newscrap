@@ -47,12 +47,12 @@ get '/sign_in' do
 end
 
 post '/sign_in' do
-  @user = User.find_by(mail: params[:user])
-    
-  if @user && @user.authenticate(params[:password]) do
+  @user=User.find_by(mail: params[:user])
+  
+  if @user && @user.authenticate(params[:password])
     session[:user] = user.id
   end
-    
+  
   redirect '/'
 end
 

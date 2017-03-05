@@ -18,21 +18,28 @@
   <meta name="twitter:image" content="/imgs/og_img.png" />
 </head>
   <body>
-    <nav>
-      <h1><img src="/imgs/logo_white.png" alt="NewScrap"></a></h1>
-    </nav>
-    <div class="main">
-      <h2>Let's scrap new article!</h2>
-      <% #if == error %>
-        <!--<p>There is something wrong.</p>-->
-      <% #end %>
-      <form action="/sign_in" method="post">
-        <label for="user">Username</label><br>
-        <input id="user" type="text" name="mail" placeholder="username" size="40" required><br>
-        <label for="password">Password</label><br>
-        <input id="password" type="password" name="password" placeholder="Password will be hidden." size="40" maxlength="12"required><br><br>
-        <input type="submit" id="signIn" value="Sign In"><br>
-      </form>
+    <div id="loading">
+        <div class="ld-text"><span class="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
+        </div>
+    </div>
+    
+    <div id="content">
+      <nav>
+        <h1><img src="/imgs/logo_white.png" alt="NewScrap"></a></h1>
+      </nav>
+      <div class="main">
+        <h2>Let's scrap new article!</h2>
+        <% #if == error %>
+          <!--<p>There is something wrong.</p>-->
+        <% #end %>
+        <form action="/sign_in" method="post">
+          <label for="user">Username</label><br>
+          <input id="user" type="text" name="mail" placeholder="username" size="40" required><br>
+          <label for="password">Password</label><br>
+          <input id="password" type="password" name="password" placeholder="Password will be hidden." size="40" maxlength="12"required><br><br>
+          <input type="submit" id="signIn" value="Sign In"><br>
+        </form>
+      </div>
     </div>
     <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="/main.js"></script>
