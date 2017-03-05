@@ -16,14 +16,27 @@
 </head>
 
   <body>
-    <header>
-      <nav>
-        <h1><img alt="newscrap_logo" src="/imgs/logo_white.png"></h1>
+    <nav class="nav_wrapper">
+      <h1><a href="/"><img alt="newscrap_logo" src="/imgs/logo_white.png"></a></h1>
+      <div class="share-wrappear">
         <ul>
-          <li><a href="/sign_up" class="button">Sign Up</a></li>
-          <li><a href="/sign_in" class="button">Sign In</a></li>
+          <li>
+            <a href="http://twitter.com/share?text=NewScrap!でお気に入りの記事をスクラップしよう！&url=&hashtags=NewScrap&via=0keihaaan" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="fi-social-twitter"></i></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/dialog/feed?app_id=419866574778905&link=&&name=NewScrap!&caption=NewScrap!でお気に入りの記事をスクラップしよう！&redirect_uri=http://mocofp.com/&display=page"><i class="fi-social-facebook"></i></a>
+          </li>
+          <li>
+            <a href="mailto:umknown?subject=NewScrap!を使おう！&amp;NewScrap!でお気に入りの記事をスクラップしよう"><i class="fi-mail"></i></a>
+          </li>
         </ul>
-      </nav>
+      </div>
+      <ul class="nav_ul_wrappear">
+        <li><a href="scrap" class="btn"><i class="fi-torsos"></i>Sign Up</a></li>
+        <li><a href="sign_out" class="btn--secondary"><i class="fi-key"></i>Sign In</a></li>
+      </ul>
+    </nav>
+    <header>
       <div class="hero">
         <h2>The Dawn of a New Scrap Era</h2>
       </div>
@@ -35,15 +48,18 @@
         
         <div class="about">
           <h3>What's NewScrap?</h3>
+          //Youtube貼り付け
         </div>
         
         <div class="how_to">
           <h3>How to use NewScrap?</h3>
+            <div class="card-wrapper">
+            </div>
         </div>
       </div>
       
       <div class="recommend">
-        <h3>Why don't you change the scrap?</h3>
+        <h3>Why don't you change to scrap ?</h3>
         <a href="/sign_up" class="button">Sign Up</a>
         <a href="/sign_in" class="button">Sign In</a>
       </div>

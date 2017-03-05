@@ -1,26 +1,95 @@
-header, footer{
-    background-color : #000;
-    color : #fff;
-    width : 100vw;
-}
-
-header nav{
-    position : fixed;
-    padding : 0;
-    margin: 0;
-}
-header nav h1 img{
-    width : 120px;
-}
-header nav ul{
-    position : flex;
-}
-header nav ul li{
-    list-style : none;
-}
-
 i{
     size: 36px;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 50px;
+    background-color: #000;
+}
+.nav_wrapper{
+    position:flex;
+    display: block;
+}
+nav h1{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+}
+nav h1 a img{
+    margin: 15px 10px 7px 30px;
+    width: 120px;
+}
+.nav_ul_wrapper{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: flex;
+    text-align: center;
+    line-height: 50px;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position:absolute;
+    right: 20px;
+}
+nav ul li{
+    margin: 0;
+    padding: 0 10px 0;
+    display: inline-block;
+    line-height: 50px;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration:none;
+    transition: 1s;
+}
+nav ul li a :hover{
+    color: #4076D4;
+}
+nav ul li a :visited{
+    color: #4076D4;
+}
+nav ul li a :hover{
+    color: #4076D4;
+    transition: 1s;
+}
+nav ul li a :active{
+    color: #4076D4;
+}
+.share_wrapper{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: flex;
+    text-align: center;
+    line-height: 50px;
+}
+.share_wrapper ul{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position:absolute;
+    left: 20px;
+}
+
+header, footer{
+    background-color: #000;
+    color: #fff;
+    width: 100vw;
+}
+
+header{
+    
 }
 .hero{
     background-image: url(./css/base.png);
