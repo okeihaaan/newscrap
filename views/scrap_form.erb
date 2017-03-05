@@ -18,9 +18,9 @@
   <meta name="twitter:image" content="/imgs/og_img.png" />
 </head>
   <body>
-    <header>
-      <h1><img alt="NewScrap" src="/imgs/logo_white.png"></h1>
-    </header>
+    <nav>
+      <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
+    </nav>
     <div class="main">
       <h2>Let's scrap new article!</h2>
       <% #if == error %>
@@ -31,24 +31,24 @@
         <input id="scrap_url" type="string" name="url" placeholder="URL" required>
         <!--<input type="submit" value="Y!Scrap"></input>-->
         <label for="scrap_headline">headline</label>
-        <input id="scrap_headline" type="text" name="title" placeholder="title" required>
+        <input id="scrap_headline" type="text" name="title" placeholder="HeadLine" required>
         <label for="scrap_souce">souce</label>
-        <input id="scrap_souce" type="string" name="souce" placeholder="souce" required>
+        <input id="scrap_souce" type="string" name="souce" placeholder="Souce" required>
         <label for="scrap_category">category</label>
-        <input id="scrap_category" type="string" name="category" placeholder="category" size="12" maxlength="12" required>
+        <input id="scrap_category" type="string" name="category" placeholder="Category" size="12" maxlength="12" required>
         <label for="scrap_keyword1">keywords</label>
-        <input id="scrap_keyword1" type="string" name="keyword" placeholder="keyword" size="12" maxlength="12" required>
+        <input id="scrap_keyword1" type="string" name="keyword" placeholder="Keyword" size="12" maxlength="12" required>
         <label for="scrap_summary1">1</label>
-        <input id="scrap_summary1" type="text" name="summary1" placeholder="summary1" size="25" maxlength="25"required>
+        <input id="scrap_summary1" type="text" name="summary1" placeholder="Summary1" size="25" maxlength="25"required>
         <label for="scrap_summary2">2</label>
-        <input id="scrap_summary2" type="text" name="summary2" placeholder="summary2" size="25" maxlength="25">
+        <input id="scrap_summary2" type="text" name="summary2" placeholder="Summary2" size="25" maxlength="25">
         <label for="scrap_summary3">3</label>
-        <input id="scrap_summary3" type="text" name="summary3" placeholder="summary3" size="25" maxlength="25">
+        <input id="scrap_summary3" type="text" name="summary3" placeholder="Summary3" size="25" maxlength="25">
         <!-- Y!Scrap実装するときはスクラップ結果代入 -->
         <label for="scrap_article"></label>
-        <textarea id="scrap_article" name="content" placeholder="article" cols="25" rows="10" wrap="sort" required></textarea>
+        <textarea id="scrap_article" name="content" placeholder="Article" cols="25" rows="10" wrap="sort" required></textarea>
         <label for="scrap_comment"></label>
-        <textarea id="scrap_comment" name="comment" placeholder="comment" cols="25" rows="5" wrap="sort" required></textarea>
+        <textarea id="scrap_comment" name="comment" placeholder="Comment" cols="25" rows="5" wrap="sort" required></textarea>
         <input type="submit" value="SCRAP!">
         <% after "/scrap" do %>
           <p>Your scrap has saved!</p>

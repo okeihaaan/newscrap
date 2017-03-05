@@ -15,20 +15,20 @@
   <link rel="stylesheet" href="/icon_font/foundation-icons.css">
 </head>
   <body>
-    <header>
-      <h1><img alt="newscrap_logo" src="/imgs/logo_white.png"></h1>
-    </header>
+    <nav>
+      <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
+    </nav>
     <div class="main">
-      <h2>Let't croate your account!</h2>
+      <h2>Let't create your account!</h2>
       <form action="/sign_up" method="post">
         <label for="user_name">user name</label>
-        <input id="user_name" type="string" placeholder="4~12 letters" size="12" maxlrngth="12" reserved>
+        <input id="user_name" type="string" name="username" placeholder="4~12 letters" size="12" maxlrngth="12" reserved>
         <label for="user_address">E-mail</label>
         <input id="user_address" type="string" reserved>
         <label for="user_password">password</label>
-        <input id="user_password1" type="password" placeholder="6~12 letters" size="12" maxlrngth="12" reserved>
+        <input id="user_password1" type="password" name="mail"  placeholder="6~12 letters" size="12" maxlrngth="12" reserved>
         <lebel for="form_text">password confirmation</label>
-        <input id="user_password2" type="password" placeholder="fill your password again" size="12" maxlrngth="12" reserved>
+        <input id="user_password2" type="password" name="password" placeholder="fill your password again" size="12" maxlrngth="12" reserved>
         <input type="submit" value="Create account">
       </form>
     </div>

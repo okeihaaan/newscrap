@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301045959) do
+ActiveRecord::Schema.define(version: 20170305011115) do
 
   create_table "article_keywords", force: :cascade do |t|
     t.string "article_id"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170301045959) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "category"
+    t. "category"
   end
 
   create_table "keywords", force: :cascade do |t|

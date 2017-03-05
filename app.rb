@@ -18,28 +18,28 @@ get '/' do
 end
 
 
-# get '/sign_up' do
-#   erb :sign_up
-# end
+get '/sign_up' do
+  erb :sign_up
+end
 
-# post '/sign_up' do
-#   #(user: params[:user])
-#   redirect '/'
-# end
+post '/sign_up' do
+  User.create({
+    username: params[:username],
+    mail: params[:mail],
+    password: params[:password],
+  })
+  window = driver.window_handles.last
+  driver.close
+end
+
+post '/sign_in' do
+  redirect '/'
+end
 
 
-# get '/sign_in' do
-#   erb :sign_in
-# end
-    
-# post '/sign_up' do
-#   redirect '/'
-# end
-
-
-# get '/sign_out' do
-#   redirect '/'
-# end
+get '/sign_out' do
+  redirect '/'
+end
 
 
 get '/scrap' do
@@ -47,21 +47,21 @@ get '/scrap' do
 end
 
 post '/scrap' do
-    Memo.create({
-        title: params[:title],
-        content: params[:content],
-        souce: params[:souce],
-        url: params[:url],
-        category_id: params[:category],
-        keyword: params[:keyword],
-        url: params[:url],
-        summary1: params[:summary1],
-        summary2: params[:summary2],
-        summary3: params[:summary3],
-        content: params[:content],
-        comment: params[:comment],
-        })
-    redirect '/'
+  Article.create({
+    title: params[:title],
+    content: params[:content],
+    souce: params[:souce],
+    url: params[:url],
+    category_id: params[:category],
+    keyword: params[:keyword],
+    url: params[:url],
+    summary1: params[:summary1],
+    summary2: params[:summary2],
+    summary3: params[:summary3],
+    content: params[:content],
+    comment: params[:comment],
+    })
+  redirect '/'
 end
 
 
