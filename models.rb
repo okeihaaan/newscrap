@@ -24,5 +24,10 @@ end
 
 class User < ActiveRecord::Base
     has_many :articles
-    # has_secure_password
+    has_secure_password
+    validates :mail,
+      presence: true,     
+      format: {with:/.+@.+/}   
+    validates :password,
+      length: {in: 6..12} 
 end

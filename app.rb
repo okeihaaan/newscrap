@@ -1,20 +1,26 @@
 require 'bundler/setup'
 Bundler.require
 require 'sinatra/reloader' if development?
-
+require 'sinatra/activerecord'
+require 'sinatra/activerecord/rake'
 require './models'
 
+enable :sessions
 
-before '/' do
-  #unless session[:user].nil?
-  erb :top
+
+get '/info_form' do
+  erb :info_form
 end
+
 
 get '/' do
   @articles = Article.all
   @categories = Category.all
+  unless  session[:user] == nil?
+    erb :index
+  end
   
-  erb :index
+  erb :top
 end
 
 
@@ -23,21 +29,25 @@ get '/sign_up' do
 end
 
 post '/sign_up' do
-  User.create({
+  @user = User.create({
     username: params[:username],
     mail: params[:mail],
     password: params[:password],
   })
-  window = driver.window_handles.last
-  driver.close
+  redirect '/'
 end
 
 post '/sign_in' do
+   @user = User.find_by(mail: params[:mail])
+   if @user && @user.authenticate(params[:password])
+     session[:user] = user.id
+     end
   redirect '/'
 end
 
 
 get '/sign_out' do
+  session[:user] = nil   
   redirect '/'
 end
 
@@ -114,8 +124,4 @@ get '/article/:id/delate' do
     end
 
     redirect '/'
-end
-
-get '/info' do
-  erb :info_form
 end
