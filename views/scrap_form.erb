@@ -19,26 +19,33 @@
 </head>
 
 <body>
-  <nav>
-    <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
-  </nav>
-  
-  <div class="main">
-    <h2>Let's scrap new article!</h2>
-    <form id="scrap" action="/scrap" method="post">
-      <input id="scrap_url" type="string" name="url" placeholder="URL" required>
-      <input id="scrap_headline" type="text" name="title" placeholder="HeadLine" required>
-      <input id="scrap_souce" type="string" name="souce" placeholder="Souce" required><br>
-      <input id="scrap_category" type="string" name="category" placeholder="Category" size="20" maxlength="12" required>
-      <input id="scrap_keyword1" type="string" name="keyword" placeholder="Keyword" size="20" maxlength="12" required><br>
-      <input id="scrap_summary1" type="text" name="summary1" placeholder="Summary1" size="50" maxlength="25"required>
-      <input id="scrap_summary2" type="text" name="summary2" placeholder="Summary2" size="50" maxlength="25">
-      <input id="scrap_summary3" type="text" name="summary3" placeholder="Summary3" size="50" maxlength="25"><br>
-      <textarea id="scrap_article" name="content" placeholder="Article" cols="50" rows="12" wrap="sort" required></textarea><br>
-      <textarea id="scrap_comment" name="comment" placeholder="Comment" cols="50" rows="5" wrap="sort" required></textarea><br>
-      <input type="submit" value="SCRAP!">
-    </form>
+  <div id="loading">
+        <div class="ld-text"><span class="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
+        </div>
   </div>
+    
+  <div id="content">
+    <nav>
+      <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
+    </nav>
+    
+    <div class="main">
+      <h2>Let's scrap new article!</h2>
+      <form id="scrap" action="/scrap" method="post">
+        <input id="scrap_url" type="string" name="url" placeholder="URL" required>
+        <input id="scrap_headline" type="text" name="title" placeholder="HeadLine" required>
+        <input id="scrap_souce" type="string" name="souce" placeholder="Souce" required><br>
+        <input id="scrap_category" type="string" name="category" placeholder="Category" size="20" maxlength="12" required>
+        <input id="scrap_keyword1" type="string" name="keyword" placeholder="Keyword" size="20" maxlength="12" required><br>
+        <input id="scrap_summary1" type="text" name="summary1" placeholder="Summary1" size="50" maxlength="25"required>
+        <input id="scrap_summary2" type="text" name="summary2" placeholder="Summary2" size="50" maxlength="25">
+        <input id="scrap_summary3" type="text" name="summary3" placeholder="Summary3" size="50" maxlength="25"><br>
+        <textarea id="scrap_article" name="content" placeholder="Article" cols="50" rows="12" wrap="sort" required></textarea><br>
+        <textarea id="scrap_comment" name="comment" placeholder="Comment" cols="50" rows="5" wrap="sort" required></textarea><br>
+        <input type="submit" value="SCRAP!">
+      </form>
+    </div>
+  </div>  
   
   <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/javascript" src="/main.js"></script>
