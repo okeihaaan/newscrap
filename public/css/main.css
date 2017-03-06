@@ -232,14 +232,14 @@ header{
 .hero{
     padding: 0;
     width: 100%;
-    height: 500px;
+    height: 550px;
     background: url(/imgs/base.png);
     /*linear-gradient(110deg, rgba(92,99,240,0.1),rgba(227,104,131,0.1) fixed,*/
     /*url(/imgs/hero.jpeg) fixed;*/
 }
 header .hero h2{
     width: 100%;
-    line-height: 500px;
+    line-height: 380px;
     text-align: center;
     font-size: 6vw;
     color: #fff;
