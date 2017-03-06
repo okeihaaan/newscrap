@@ -16,26 +16,33 @@
 </head>
 
 <body>
-  <nav>
-    <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
-  </nav>
-  
-  <div class="main">
-    <h2>Let's create your account!</h2>
-    <form action="/sign_up" method="post">
-      <label for="user_name">user name</label><br>
-      <input id="user_name" type="string" name="username" placeholder="4~12 letters" size="40" maxlrngth="12" reserved><br>
-      <label for="user_address">E-mail</label><br>
-      <input id="user_address" type="string" name="mail" placeholder="xxxx@xxxx.xxx"reserved><br>
-      <label for="user_password1">password</label><br>
-      <input id="user_password1" type="password" name="password"  placeholder="6~12 letters" size="40" maxlrngth="12" reserved><br>
-      <lebel for="user_password2">password confirmation</label><br>
-      <input id="user_password2" type="password" name="password_confirmation" placeholder="fill your password again" size="40" maxlrngth="12" reserved><br><br>
-      <input type="submit" class="btn" value="Create account">
-    </form>
+  <div id="loading">
+        <div class="ld-text"><span class="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
+        </div>
+    </div>
+    
+  <div id="content">
+    <nav>
+      <h1><img src="/imgs/logo_white.png" alt="NewScrap"></h1>
+    </nav>
+    
+    <div class="main">
+      <h2>Let's create your account!</h2>
+      <form action="/sign_up" method="post">
+        <label for="user_name">user name</label><br>
+        <input id="user_name" type="string" name="username" placeholder="4~12 letters" size="40" maxlrngth="12" reserved><br>
+        <label for="user_address">E-mail</label><br>
+        <input id="user_address" type="string" name="mail" placeholder="xxxx@xxxx.xxx"reserved><br>
+        <label for="user_password1">password</label><br>
+        <input id="user_password1" type="password" name="password"  placeholder="6~12 letters" size="40" maxlrngth="12" reserved><br>
+        <lebel for="user_password2">password confirmation</label><br>
+        <input id="user_password2" type="password" name="password_confirmation" placeholder="fill your password again" size="40" maxlrngth="12" reserved><br><br>
+        <input type="submit" class="btn" value="Create account">
+      </form>
+    </div>
   </div>
   
-  <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/main.js"></script>
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
