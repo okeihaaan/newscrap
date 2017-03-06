@@ -25,33 +25,23 @@
         <h1><img alt="newscrap_logo" src="/imgs/logo_white.png"></h1>
       </nav>
       
-      <div class="main">
-        <div clas="detail_wrapper">
-          <h2>Detail of Article</h2>
-          <h3><% @article.title %></h2>
-          <div class="icon_wrapper">
-            <% if @article.favorite == false do %>
-              <i class=".fi-star"></i>
-            <% else %>
-              <i class=".fi-star colored"></i>
-            <% end %>
-            <form name="edit" action="/article/<%= @article.id %>/edit" method="post">
-              <input><i class="fi-clipboard-pencil"></i></input>
-            </form>
-            <form name="delate" action="/article/<%= @article.id %>/delete" method="post">
-              <input type="summit" name="delate"><i class=".fi-trash"></i></input>
-            </form>
-          <div>
-          <p><%= @article.created_at %></p>
-          <a href="//<%= @article.url %>">http://<%= @article.url %></a>
-          <p><%= @article.category.name %></p>
-          <a href="//www.google.co.jp/"><%= @article.keyword %></a>
-          <a href="//www.google.co.jp/"><%= @article.summary1 %></a>
-          <a href="//www.google.co.jp/"><%= @article.summary2 %></a>
-          <a href="//www.google.co.jp/"><%= @article.summary3 %></a>
-          <p><%= @article.content %></p>
-          <p><%= @article.comment%></p>
-          <a href=""><i class=".fi-x"></i>close</a>
+      <div class="main detail_wrapper">
+        <h2>Detail of Article</h2>
+        <h3><% @article.title %></h2>
+        <div class="icon_wrapper">
+           <form action="/article/:id/favorite/" method="post">
+            <input type="submit"><i class="i_default fi-heart"></i></input>
+          </form>
+          <form action="/article/:id/edit" method="post">
+            <input type="submit"><i class="i_default fi-pencil"></i></input>
+          </form>
+          <form action="/article/:id/delete/" method="post">
+            <input type="submit"><i class="i_default fi-trash"></i></input>
+          </form>
+        </div>
+        <div>
+          
+          <!--<a href=""><i class=".fi-x"></i>close</a>-->
         </div>
       </div>
     </div>

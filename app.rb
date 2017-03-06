@@ -15,7 +15,7 @@ end
 
 # to debug
 get '/index' do
-  @articles = Article.all
+  @articles = Article.all.limit(20).order("created_at desc") 
   @categories = Category.all
   
   erb :index
@@ -115,13 +115,20 @@ post '/scrap' do
   
 end
 
-
-post '/article/search' do
-  @articles = Article.all
-  @categories = Category.all
-  
-  
+post '/article/:id/favorite/' do
+  @article = Article.find(params[:id])
+  @article.favorite = !@article.favorite
+  @article.save
+  redirect '/'
 end
+
+# post '/article/search' do
+#   @articles = Article.all
+#   @categories = Category.all
+  
+#   Article.where(keyword: params[:keyword])
+  
+# end
 
 
 post '/article/:id/detail' do
