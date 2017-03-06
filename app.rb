@@ -7,6 +7,11 @@ require './models'
 
 enable :sessions
 
+headers do
+  def current_user
+    User.find_by(id: session[:user])
+  end
+end
 
 get '/info_form' do
   erb :info_form
@@ -40,7 +45,12 @@ post '/sign_up' do
     username: params[:username],
     mail: params[:mail],
     password: params[:password],
+    password_confilmation: params[:password_confilmation],
   })
+  
+  if @user.persisted?
+    session[:user] = user.id
+  end
   
   redirect '/'
   
