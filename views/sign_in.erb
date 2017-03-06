@@ -34,7 +34,7 @@
         <% #end %>
         <form action="/sign_in" method="post">
           <label for="user">Username</label><br>
-          <input id="user" type="text" name="mail" placeholder="username" size="40" required><br>
+          <input id="user" type="text" name="username" placeholder="username" size="40" maxlength="12" required><br>
           <label for="password">Password</label><br>
           <input id="password" type="password" name="password" placeholder="Password will be hidden." size="40" maxlength="12"required><br><br>
           <input type="submit" id="signIn" value="Sign In"><br>

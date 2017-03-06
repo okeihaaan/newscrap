@@ -7,7 +7,7 @@ require './models'
 
 enable :sessions
 
-headers do
+helpers do
   def current_user
     User.find_by(id: session[:user])
   end
@@ -22,13 +22,16 @@ get '/' do
   @articles = Article.all
   @categories = Category.all
 
-  unless session[:user].nil?
+  current_user = User.find_by(id: session[:user])
+  
+  if current_user.nil?
+    erb :top
+  else
     erb :index
   end
-
-  erb :top
   
 end
+
 
 get '/index' do
   @articles = Article.all
@@ -41,12 +44,12 @@ get '/sign_up' do
 end
 
 post '/sign_up' do
-  @user = User.create({
+  @user = User.create(
     username: params[:username],
     mail: params[:mail],
     password: params[:password],
-    password_confilmation: params[:password_confilmation],
-  })
+    password_confilmation: params[:password_confilmation]
+  )
   
   if @user.persisted?
     session[:user] = user.id
@@ -62,19 +65,19 @@ get '/sign_in' do
 end
 
 post '/sign_in' do
-  @user=User.find_by(mail: params[:user])
+  @user = User.find_by(username: params[:username])
   
   if @user && @user.authenticate(params[:password])
     session[:user] = user.id
   end
   
-  erb :index
-  # make it up lator
+  redirect '/'
+  
 end
 
 
 get '/sign_out' do
-  session[:user] = nil   
+  session[:user] = nil
   redirect '/'
 end
 

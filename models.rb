@@ -25,6 +25,9 @@ end
 class User < ActiveRecord::Base
     has_many :articles
     has_secure_password
+     validates :username,
+     presence: true,
+     format: { with: /\A\w+\z/ }
     validates :mail,
       presence: true,     
       format: {with:/.+@.+/}   
