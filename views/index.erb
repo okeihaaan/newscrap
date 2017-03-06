@@ -76,36 +76,36 @@
     <div class="main">
       <div class="contentBox">
        
-        <div class="archive">
-          <h2>Archive</h2>
-            <div id="search">
-              <form action="/article/search" method="post">
-                  <input id="search_keyword" type="text" name="keyword" placeholder="key word" size="12">
-                  <label class="select_category">
-                    <select for="search_category" name="category">
-                      <% @categories.name.each | params[:name] | do %>
-                        <option value="<%= params[:name] %>"><%= params[:name] %></option>
-                      <% end %>
-                    </select>
-                    <span class="select_category">Select Category</span>
-                  </label>
-                  <label for="search_souce"></label>
-                  <select for="search_source" name="source">
+        <!--<div class="archive">-->
+        <!--  <h2>Archive</h2>-->
+        <!--    <div id="search">-->
+        <!--      <form action="/article/search" method="post">-->
+        <!--          <input id="search_keyword" type="text" name="keyword" placeholder="key word" size="12">-->
+        <!--          <label class="select_category">-->
+        <!--            <select for="search_category" name="category">-->
+                      <!--<% #@categories.name.each | params[:name] | do %>-->
+                      <!--  <option value="<%= #params[:name] %>"><%= #params[:name] %></option>-->
+                      <!--<% #end %>-->
+        <!--            </select>-->
+        <!--            <span class="select_category">Select Category</span>-->
+        <!--          </label>-->
+        <!--          <label for="search_souce"></label>-->
+        <!--          <select for="search_source" name="source">-->
                     <% #@articles.each do |article| %>
                       <% #article.souce.each do %>
-                        <option value="<%= %>"><%= %></option>
+        <!--                <option value="<%= %>"><%= %></option>-->
                       <% #end %>
                     <% #end %>
-                  </select>
-                  <label for="search_date"></label>
-                  <select id="search_date" name="date">
+        <!--          </select>-->
+        <!--          <label for="search_date"></label>-->
+        <!--          <select id="search_date" name="date">-->
                     <% #.each do %>
-                      <option value="<%= %>"><%= %></option>
+        <!--              <option value="<%= %>"><%= %></option>-->
                     <% #end %>
-                  </select>
-                  <input type="submit" name="submit" value="Search">
-              </form>
-            </div>
+        <!--          </select>-->
+        <!--          <input type="submit" name="submit" value="Search">-->
+        <!--      </form>-->
+        <!--    </div>-->
           <!--<table>-->
           <!--  <tr>-->
           <!--    <th></th>-->

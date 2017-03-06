@@ -13,6 +13,11 @@ helpers do
   end
 end
 
+# to debug
+get '/index' do
+  erb :index
+end
+
 get '/info_form' do
   erb :info_form
 end
@@ -48,7 +53,7 @@ post '/sign_up' do
     username: params[:username],
     mail: params[:mail],
     password: params[:password],
-    password_confilmation: params[:password_confilmation]
+    password_confirmation: params[:password_confirmation]
   )
   
   if @user.persisted?
@@ -154,17 +159,19 @@ post '/article/:id/update' do
     comment: params[:comment],
     favorite: params[:favorite],
   })
+  
   @article.save
-
+  
   redirect '/'
+  
 end
 
 
 get '/article/:id/delate' do
   @article = Article.find_by({id: params[:id]})
-    
+  
   unless @article.nil?
-    @article.destroy
+  @article.destroy
   end
 
   redirect '/'
