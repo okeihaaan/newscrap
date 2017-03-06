@@ -10,6 +10,12 @@ $(window).load(function() {
     $('#content').css('display', 'block');
 });
 
+$(function() {
+    $("#datepicker").datepicker();
+    $("#datepicker").datepicker("option", "showOn", 'button');
+    $("#datepicker").datepicker("option", "buttonImageOnly", true);
+    $("#datepicker").datepicker("option", "buttonImage", 'ico_calendar.png');
+  });
 
 $(signIn).onclick(function(){
     javascript:window.open('about:blank','_self').close();

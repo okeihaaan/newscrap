@@ -15,6 +15,9 @@ end
 
 # to debug
 get '/index' do
+  @articles = Article.all
+  @categories = Category.all
+  
   erb :index
 end
 
@@ -52,7 +55,7 @@ post '/sign_up' do
   @user = User.create(
     username: params[:username],
     mail: params[:mail],
-    password: params[:password],
+    password: params[:password_digest],
     password_confirmation: params[:password_confirmation]
   )
   
@@ -98,7 +101,7 @@ post '/scrap' do
     content: params[:content],
     souce: params[:souce],
     url: params[:url],
-    category_id: params[:category],
+    category_id: params[:name],
     keyword: params[:keyword],
     url: params[:url],
     summary1: params[:summary1],
@@ -113,9 +116,12 @@ post '/scrap' do
 end
 
 
-# post '/article/search' do
+post '/article/search' do
+  @articles = Article.all
+  @categories = Category.all
   
-# end
+  
+end
 
 
 post '/article/:id/detail' do
@@ -149,7 +155,7 @@ post '/article/:id/update' do
     content: params[:content],
     souce: params[:souce],
     url: params[:url],
-    category_id: params[:category],
+    category_id: params[:name],
     keyword: params[:keyword],
     url: params[:url],
     summary1: params[:summary1],

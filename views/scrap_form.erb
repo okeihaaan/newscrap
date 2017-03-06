@@ -32,10 +32,19 @@
     <div class="main">
       <h2>Let's scrap new article!</h2>
       <form id="scrap" action="/scrap" method="post">
-        <input id="scrap_url" type="string" name="url" placeholder="URL" required>
-        <input id="scrap_headline" type="text" name="title" placeholder="HeadLine" required>
-        <input id="scrap_souce" type="string" name="souce" placeholder="Souce" required><br>
-        <input id="scrap_category" type="string" name="category" placeholder="Category" size="20" maxlength="12" required>
+        <input id="scrap_url" type="string" name="url" placeholder="URL" size="50" required>
+        <input id="scrap_headline" type="text" name="title" placeholder="HeadLine" size="50" required>
+        <input id="scrap_souce" type="string" name="souce" placeholder="Souce" size="20" required><br>
+        <select id="scrap_category" type="string" name="category" placeholder="Category" size="1" required>
+          <option>政治</option>
+          <option>経済</option>
+          <option>国際</option>
+          <option>国内</option>
+          <option>スポーツ</option>
+          <option>生活</option>
+          <option>科学</option>
+          <option>文化</option>
+        </select>
         <input id="scrap_keyword1" type="string" name="keyword" placeholder="Keyword" size="20" maxlength="12" required><br>
         <input id="scrap_summary1" type="text" name="summary1" placeholder="Summary1" size="50" maxlength="25"required>
         <input id="scrap_summary2" type="text" name="summary2" placeholder="Summary2" size="50" maxlength="25">

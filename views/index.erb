@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/css/cutestrap.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" href="/icon_font/foundation-icons.css">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css" >
   </head>
 
   <body>
@@ -49,73 +50,64 @@
           <li><a href="#search"><i class="i_default fi-magnifying-glass"></i></a></li>
           <li><a href="/analize"><i class="i_default fi-graph-bar"></i></a></li>
           <li><a href="/sign_out"><i class="i_default fi-lock"></i></a></li>
-      </ul>
+        </ul>
       </nav>
 
-    
-  <!--  <header class="flex">-->
-  <!--    <div class="carender flex">-->
-  <!--      <div class="carender-1 flex ta_center">-->
-  <!--        <div id="year"></div>-->
-  <!--        <p>年</p>-->
-  <!--        <div id="month"></div>-->
-  <!--        <p>月</p>-->
-  <!--      </div>-->
-  <!--      <div class="carender-2">-->
-  <!--        <div id="date"></div>-->
-  <!--        <p>日</p>-->
-  <!--      </div>-->
-  <!--    </div>-->
-      
-  <!--    <div class="headline">-->
-  <!--      <h2>News Headline</h2>-->
-  <!--      <div id="rss"></div>-->
-  <!--  </div>-->
-  <!--</header>-->
-    
-    <div class="main">
-      <div class="contentBox">
-       
-        <!--<div class="archive">-->
-        <!--  <h2>Archive</h2>-->
-        <!--    <div id="search">-->
-        <!--      <form action="/article/search" method="post">-->
-        <!--          <input id="search_keyword" type="text" name="keyword" placeholder="key word" size="12">-->
-        <!--          <label class="select_category">-->
-        <!--            <select for="search_category" name="category">-->
-                      <!--<% #@categories.name.each | params[:name] | do %>-->
-                      <!--  <option value="<%= #params[:name] %>"><%= #params[:name] %></option>-->
-                      <!--<% #end %>-->
-        <!--            </select>-->
-        <!--            <span class="select_category">Select Category</span>-->
-        <!--          </label>-->
-        <!--          <label for="search_souce"></label>-->
-        <!--          <select for="search_source" name="source">-->
-                    <% #@articles.each do |article| %>
-                      <% #article.souce.each do %>
-        <!--                <option value="<%= %>"><%= %></option>-->
-                      <% #end %>
-                    <% #end %>
-        <!--          </select>-->
-        <!--          <label for="search_date"></label>-->
-        <!--          <select id="search_date" name="date">-->
-                    <% #.each do %>
-        <!--              <option value="<%= %>"><%= %></option>-->
-                    <% #end %>
-        <!--          </select>-->
-        <!--          <input type="submit" name="submit" value="Search">-->
-        <!--      </form>-->
-        <!--    </div>-->
-          <!--<table>-->
-          <!--  <tr>-->
-          <!--    <th></th>-->
-          <!--  </tr>-->
-            <!-- <% #.each do %> -->
-            <!--<tr>-->
-            <!--</tr>-->
-            <!--<% #end %>-->
-          <!--</table>-->
-          
+      <div class="main">
+        <h2>Acticles</h2>
+        <div id ="search" class="search">
+          <form action="/article/search" method="post" class="flex ta_center">
+            <label class="select">
+              <select id="search_category" type="string" name="category" placeholder="Category" size="1" class="inline-block" />
+                <option>政治</option>
+                <option>経済</option>
+                <option>国際</option>
+                <option>国内</option>
+                <option>スポーツ</option>
+                <option>生活</option>
+                <option>科学</option>
+                <option>文化</option>
+              </select>
+            </label>
+            <label class="textfield"><input id="search_keyword" type="text" name="keyword" placeholder="keyword" size="15" maxlength="12" class="inline-block" /></label>
+            <label class="textfield"><input id ="search_souce" type="text" name="souce" placeholder="souce" size="15" class="inline-block" /></label>
+            <input type="text" id="datepicker" name="date">
+            <input type="submit" value="search" class="btn--secondary" class="inline-block" />
+          </form>
+        </div>
+        
+        <div>
+          <table>
+            <tr>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Headline</th>
+              <th>Souce</th>
+              <th></th>
+            </tr>
+            <% @articles.each do |article| %>
+              <tr>
+                <td><% article.date %></td>
+                <td><% article.name %></td>
+                <td><% article.title %></td>
+                <td><% article.souce %></td>
+                <td>
+                  <form action="/article/:id/favorite/" method="post">
+                    <input type="submit"><i class="i_default fi-heart"></i></input>
+                  </form>
+                  <form action="/article/:id/edit" method="post">
+                    <input type="submit"><i class="i_default fi-pencil"></i></input>
+                  </form>
+                  <form action="/article/:id/delete/" method="post">
+                    <input type="submit"><i class="i_default fi-trash"></i></input>
+                  </form>
+                </td>
+              </tr>
+              <% break n > 20 %>
+            <% end %>
+          </table>
+        </div>
+      </div>
           
       <!--<div class="side-contents grid--medium">    -->
       <!--  <div class="latest">-->
@@ -129,15 +121,17 @@
       <!--</div>-->
         
       </div>
-      </div>
+    </div>
     <footer class="flex ta_left">
       <p>(c)okeihaaan 2017 all rights reserved</p>
-      <a href="javascript:w=window.open('/info_form','','scrollbars=yes,Width=500,Height=600');w.focus();">info</a>
+      <p><a href="javascript:w=window.open('/info_form','','scrollbars=yes,Width=500,Height=600');w.focus();">info</a></p>
     </footer>
   </div>
   
-  <script type="text/javascript" src="//googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/rss.js"></script>
-  <script type="text/javascript" src="/main.js"></script>
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+  <script type="text/javascript" src="/js/rss.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
   </body>
 </html>
