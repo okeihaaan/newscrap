@@ -4,6 +4,7 @@ require 'sinatra/reloader' if development?
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
 require './models'
+require 'rss'
 
 enable :sessions
 
@@ -18,6 +19,9 @@ get '/index' do
   @articles = Article.all.limit(20).order("created_at desc") 
   @categories = Category.all
   
+  url = "http://news.yahoo.co.jp/pickup/rss.xml"
+  @rss = RSS::Parser.parse(url)
+  
   erb :index
 end
 
@@ -29,6 +33,9 @@ end
 get '/' do
   @articles = Article.all
   @categories = Category.all
+  
+  url = "http://news.yahoo.co.jp/pickup/rss.xml"
+  @rss = RSS::Parser.parse(url)
 
   current_user = User.find_by(id: session[:user])
   
