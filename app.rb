@@ -16,7 +16,7 @@ end
 
 # to debug
 get '/index' do
-  @articles = Article.all.limit(20).order("created_at desc") 
+  @articles = Article.all#.limit(20).order("created_at desc") 
   @categories = Category.all
   
   url = "http://news.yahoo.co.jp/pickup/rss.xml"
@@ -48,11 +48,6 @@ get '/' do
 end
 
 
-get '/index' do
-  @articles = Article.all
-  @categories = Category.all
-end
-
 
 get '/sign_up' do
   erb :sign_up
@@ -66,9 +61,9 @@ post '/sign_up' do
     password_confirmation: params[:password_confirmation]
   )
   
-  if @user.persisted?
-    session[:user] = user.id
-  end
+  # if @user.persisted?
+  #   session[:user] = user.id
+  # end
   
   redirect '/'
   
@@ -86,7 +81,7 @@ post '/sign_in' do
     session[:user] = user.id
   end
   
-  redirect '/'
+  redirect '/index'
   
 end
 
@@ -137,9 +132,8 @@ end
   
 # end
 
-
-post '/article/:id/detail' do
-  @article = Article.all
+get '/article/:id/detail' do
+  @article = Article.find_by({id: params[:id]})
   erb :detail
 end
 

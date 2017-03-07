@@ -10,41 +10,49 @@
   <meta name="og:discription" content="気になる記事をクラウド一括管理！デジタル時代の新感覚スクラップブック">
   <meta name="og:image" content="/imgs/og_img.png">
   <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" type="text/css" href="/cutestrap.css">
-  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/cutestrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
   <link rel="stylesheet" href="/icon_font/foundation-icons.css">
 </head>
-  <body>
-    <div id="loading">
-        <div class="ld-text"><span class="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
-        </div>
-    </div>
-    
-    <div id="content">
-      <nav>
-        <h1><img alt="newscrap_logo" src="/imgs/logo_white.png"></h1>
-      </nav>
-      
-      <div class="main detail_wrapper">
-        <h2>Detail Of  The Article</h2>
-        <!--<h3><% #@article.title %></h2>-->
-        <!--<div class="icon_wrapper">-->
-        <!--   <form action="/article/:id/favorite/" method="post">-->
-        <!--    <input type="submit"><i class="i_default fi-heart"></i></input>-->
-        <!--  </form>-->
-        <!--  <form action="/article/:id/edit" method="post">-->
-        <!--    <input type="submit"><i class="i_default fi-pencil"></i></input>-->
-        <!--  </form>-->
-        <!--  <form action="/article/:id/delete/" method="post">-->
-        <!--    <input type="submit"><i class="i_default fi-trash"></i></input>-->
-        <!--  </form>-->
-        <!--</div>-->
-        <!--<div>-->
-           <!--<a href=""><i class=".fi-x"></i>close</a>-->
-        <!--</div>-->
+
+<body>
+  <div id="loading">
+      <div class="ld-text"><span class="loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></span>
       </div>
-    </div>
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/js/main.js"></script>
-  </body>
+  </div>
+  
+  <div id="content">
+    <nav>
+      <h1><img alt="newscrap_logo" src="/imgs/logo_white.png"></h1>
+    </nav>
+    
+    <div class="main detail_wrapper">
+      <h2>Detail Of  The Article</h2>
+      <h3><a href="<%= @article.url %>"><%= @article.title %></a></h2>
+      <div class="icon_wrapper">
+         <form action="/article/:id/favorite/" method="post">
+          <input type="submit"><i class="i_default fi-heart"></i></input>
+        </form>
+        <form action="/article/:id/edit" method="post">
+          <input type="submit"><i class="i_default fi-pencil"></i></input>
+        </form>
+        <form action="/article/:id/delete/" method="post">
+          <input type="submit"><i class="i_default fi-trash"></i></input>
+        </form>
+      </div>
+      <ul>
+        <li><%= @article.souce %></li>
+        <li><%= @article.summary1 %></li>
+        <li><%= @article.summary2 %></li>
+        <li><%= @article.summary3 %></li>
+        <li><%= @article.comment %></li>
+        <li><%= @article.content %></li>
+      </ul>
+      <!--<div>-->
+      <!--   <a href=""><i class=".fi-x"></i>close</a>-->
+      <!--</div>-->
+  </div>
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
+</body>
 </html>
