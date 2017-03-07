@@ -56,86 +56,100 @@
       </nav>
       
       <div class="main contentBox">
+        <header>
+        </header>
         
-        <div class="headline contentBox">
-          <h2>News Headline</h2>
-            <div class="rss">
-              <ul>
-                <% @rss.items.each do |item| %>
-                <li><a href="<% #item.link %>"><% item.title %></a></li>
-                <% end %>
-              </ul>
+        <div class="daily_content">
+          <!--<div class="flex">-->
+            <!--<div class="calender">-->
+              <% #@rss.items.each do |item| %>
+            <!--  <p class="cd_month"></p>-->
+            <!--  <>-->
+            <!--  <% #end %>-->
+            <!--</div>-->
+            <div class="headline inline">
+              <h2>News Headline</h2>
+                <div class="rss">
+                  <ul>
+                    <% @rss.items.each do |item| %>
+                    <li><a href="<%= item.link %>"><%= item.title %></a></li>
+                    <% end %>
+                  </ul>
+                </div>
             </div>
+          <!--</div>-->
         </div>
-        
-        <div id ="search" class="search contentBox">
+          
+        <div class="article_area">
           <h2>Acticles</h2>
-          <form action="/article/search" method="post" class="flex ta_center">
-            <label class="select">
-              <select id="search_category" type="string" name="category" placeholder="Category" size="1" class="inline-block" />
-                <option>政治</option>
-                <option>経済</option>
-                <option>国際</option>
-                <option>国内</option>
-                <option>スポーツ</option>
-                <option>生活</option>
-                <option>科学</option>
-                <option>文化</option>
-              </select>
-            </label>
-            <label class="textfield"><input id="search_keyword" type="text" name="keyword" placeholder="keyword" size="15" maxlength="12" class="inline-block" /></label>
-            <label class="textfield"><input id ="search_souce" type="text" name="souce" placeholder="souce" size="15" class="inline-block" /></label>
-            <input type="text" id="datepicker" name="date">
-            <input type="submit" value="search" class="btn--secondary" class="inline-block" />
-          </form>
-        </div>
-      
-        <div class="list">
-          <table>
-            <tr>
-              <th>Date</th>
-              <th>Category</th>
-              <th>Headline</th>
-              <th>Souce</th>
-              <th></th>
-            </tr>
-        <!--    <% #@articles.each do |article| %>-->
-        <!--      <tr>-->
-        <!--        <td><% #article.created_at %></td>-->
-                <!--<td><% #article.name %></td>-->
-        <!--        <td><% #article.title %></td>-->
-        <!--        <td><% #article.souce %></td>-->
-        <!--        <td>-->
-        <!--          <form action="/article/:id/favorite/" method="post">-->
-        <!--            <input type="submit"><i class="i_default fi-heart"></i></input>-->
-        <!--          </form>-->
-        <!--          <form action="/article/:id/edit" method="post">-->
-        <!--            <input type="submit"><i class="i_default fi-pencil"></i></input>-->
-        <!--          </form>-->
-        <!--          <form action="/article/:id/delete/" method="post">-->
-        <!--            <input type="submit"><i class="i_default fi-trash"></i></input>-->
-        <!--          </form>-->
-        <!--        </td>-->
-        <!--      </tr>-->
-        <!--    <% #end %>-->
-          </table>
-        </div>
+          <div id ="search" class="search contentBox">
+            <form action="/article/search" method="post" class="flex ta_center">
+              <label class="select">
+                <select id="search_category" type="string" name="category" placeholder="Category" size="1" class="inline-block" />
+                  <option>政治</option>
+                  <option>経済</option>
+                  <option>国際</option>
+                  <option>国内</option>
+                  <option>スポーツ</option>
+                  <option>生活</option>
+                  <option>科学</option>
+                  <option>文化</option>
+                </select>
+              </label>
+              <label class="textfield"><input id="search_keyword" type="text" name="keyword" placeholder="keyword" size="15" maxlength="12" class="inline-block" /></label>
+              <label class="textfield"><input id ="search_souce" type="text" name="souce" placeholder="souce" size="15" class="inline-block" /></label>
+              <input type="text" id="datepicker" name="date">
+              <input type="submit" value="search" class="btn--secondary" class="inline-block" />
+            </form>
+          </div>
         
-         <!--<div class="side-contents grid--medium">    -->
-      <!--  <div class="latest">-->
-      <!--    <h2>Latest Acticle</h2>-->
-      <!--      <ul>-->
-      <!--        <li><a href=""><%= %></a></li>-->
-      <!--        <li><a href=""><%= %></a></li>-->
-      <!--        <li><a href=""><%= %></a></li>-->
-      <!--      </ul>-->
-      <!--  </div>-->
-      <!--</div>-->
-   </div>
+          <div class="list contentBox">
+            <table>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Headline</th>
+                <th>Souce</th>
+                <th></th>
+              </tr>
+              <% @articles.each do |article| %>
+                <tr>
+                  <td><% article.created_at %></td>
+                  <!--<td><% #article.name %></td>-->
+                  <td><% article.title %></td>
+                  <td><% article.souce %></td>
+                  <td>
+                    <form action="/article/:id/favorite/" method="post">
+                      <input type="submit"><i class="i_default fi-heart"></i></input>
+                    </form>
+                    <form action="/article/:id/edit" method="post">
+                      <input type="submit"><i class="i_default fi-pencil"></i></input>
+                    </form>
+                    <form action="/article/:id/delete/" method="post">
+                      <input type="submit"><i class="i_default fi-trash"></i></input>
+                    </form>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
+          
+        <!--<div class="side-contents grid--medium">    -->
+        <!--  <div class="latest">-->
+        <!--    <h2>Latest Acticle</h2>-->
+        <!--      <ul>-->
+        <!--        <li><a href=""><%= %></a></li>-->
+        <!--        <li><a href=""><%= %></a></li>-->
+        <!--        <li><a href=""><%= %></a></li>-->
+        <!--      </ul>-->
+        <!--  </div>-->
+        <!--</div>-->
 
     <footer class="flex ta_left">
       <p>(c)okeihaaan 2017 all rights reserved</p>
-      <p><a href="javascript:w=window.open('/info_form','','scrollbars=yes,Width=500,Height=600');w.focus();">info</a></p>
+      <a href="javascript:w=window.open('/info_form','','scrollbars=yes,Width=500,Height=600');w.focus();">info</a>
     </footer>
   
   <script type="text/javascript" src="/js/jquery.js"></script>
