@@ -180,6 +180,7 @@ nav h1 a img{
     padding: 0 0 0 auto;
     width: 50%;
     line-height: 50px;
+    flex-wrap: single;
 }
 nav ul{
     margin: 0;
