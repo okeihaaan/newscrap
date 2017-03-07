@@ -111,7 +111,7 @@ post '/scrap' do
     comment: params[:comment],
     })
     
-  redirect '/'
+  redirect '/scrap'
   
 end
 
