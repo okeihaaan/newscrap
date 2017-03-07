@@ -55,7 +55,7 @@ post '/sign_up' do
   @user = User.create(
     username: params[:username],
     mail: params[:mail],
-    password: params[:password_digest],
+    password: params[:password],
     password_confirmation: params[:password_confirmation]
   )
   
@@ -102,7 +102,7 @@ post '/scrap' do
     souce: params[:souce],
     url: params[:url],
     category_id: params[:name],
-    keyword: params[:keyword],
+    # keyword: params[:keyword],
     url: params[:url],
     summary1: params[:summary1],
     summary2: params[:summary2],
