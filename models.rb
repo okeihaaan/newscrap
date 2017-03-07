@@ -1,5 +1,11 @@
 ActiveRecord::Base.establish_connection("sqlite3:db/development.db")
 
+require 'bundler/setup'
+Bundler.require if development?
+ActiveRecord::Base.establish_connection('sqlite3:db/development.db')
+end
+
+class History < ActiveRecord::Base end 
 
 class Article < ActiveRecord::Base
    belongs_to :user
