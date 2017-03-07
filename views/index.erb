@@ -26,41 +26,43 @@
     </div>
     
     <div id="content">
-      <nav class="nav_wrapper flex">
-        <div class ="nav_left flex ta_left">
-          <h1><a href="/"><img alt="newscrap_logo" src="/imgs/logo_white.png"></a></h1>
-          <div class="share-wrappear flex ta_center grid--medium">
-            <ul>
-              <li><a href=""><i class="i_default fi-comments"></i></a>
-              </li>
-              <li>
-                <a href="http://twitter.com/share?text=NewScrap!でお気に入りの記事をスクラップしよう！&url=&hashtags=NewScrap&via=0keihaaan" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="i_default fi-social-twitter"></i></a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/dialog/feed?app_id=419866574778905&link=&&name=NewScrap!&caption=NewScrap!でお気に入りの記事をスクラップしよう！&redirect_uri=http://mocofp.com/&display=page"><i class="i_default fi-social-facebook"></i></a>
-              </li>
-              <li>
-                <a href="mailto:umknown?subject=NewScrap!を使おう！&amp;NewScrap!でお気に入りの記事をスクラップしよう"><i class="i_default fi-mail"></i></a>
-              </li>
-            </ul>
+      <nav>
+        <div class="nav_wrapper flex">
+          <div class ="nav_left flex ta_left">
+            <h1><a href="/"><img alt="newscrap_logo" src="/imgs/logo_white.png"></a></h1>
+            <div class="share-wrappear flex ta_center grid--medium">
+              <ul>
+                <li><a href=""><i class="i_default fi-comments"></i></a>
+                </li>
+                <li>
+                  <a href="http://twitter.com/share?text=NewScrap!でお気に入りの記事をスクラップしよう！&url=&hashtags=NewScrap&via=0keihaaan" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><i class="i_default fi-social-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/dialog/feed?app_id=419866574778905&link=&&name=NewScrap!&caption=NewScrap!でお気に入りの記事をスクラップしよう！&redirect_uri=http://mocofp.com/&display=page"><i class="i_default fi-social-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="mailto:umknown?subject=NewScrap!を使おう！&amp;NewScrap!でお気に入りの記事をスクラップしよう"><i class="i_default fi-mail"></i></a>
+                </li>
+              </ul>
+            </div>
           </div>
+          <ul class="nav_ul_wrappear flex ta_right">
+            <li><a href="javascript:w=window.open('/scrap','','scrollbars=yes,Width=600,Height=600');w.focus();"><i class="i_default fi-clipboard-pencil"></i></a></li>
+            <li><a href="#search"><i class="i_default fi-magnifying-glass"></i></a></li>
+            <li><a href="/analize"><i class="i_default fi-graph-bar"></i></a></li>
+            <li><a href="/sign_out"><i class="i_default fi-lock"></i></a></li>
+          </ul>
         </div>
-        <ul class="nav_ul_wrappear flex ta_right">
-          <li><a href="javascript:w=window.open('/scrap','','scrollbars=yes,Width=600,Height=600');w.focus();"><i class="i_default fi-clipboard-pencil"></i></a></li>
-          <li><a href="#search"><i class="i_default fi-magnifying-glass"></i></a></li>
-          <li><a href="/analize"><i class="i_default fi-graph-bar"></i></a></li>
-          <li><a href="/sign_out"><i class="i_default fi-lock"></i></a></li>
-        </ul>
       </nav>
       
-      <div class="main">
-        <div class="headline">
+      <div class="main contentBox">
+        <div class="headline contentBox">
           <h2>News Headline</h2>
             <div id="rss"></div>
         </div>
         
-        <h2>Acticles</h2>
-        <div id ="search" class="search">
+        <div id ="search" class="search contentBox">
+          <h2>Acticles</h2>
           <form action="/article/search" method="post" class="flex ta_center">
             <label class="select">
               <select id="search_category" type="string" name="category" placeholder="Category" size="1" class="inline-block" />
@@ -80,8 +82,8 @@
             <input type="submit" value="search" class="btn--secondary" class="inline-block" />
           </form>
         </div>
-        
-        <div>
+      
+        <div class="list">
           <table>
             <tr>
               <th>Date</th>
@@ -90,31 +92,29 @@
               <th>Souce</th>
               <th></th>
             </tr>
-            <% @articles.each do |article| %>
-              <tr>
-                <td><% article.datetime %></td>
-                <td><% article.name %></td>
-                <td><% article.title %></td>
-                <td><% article.souce %></td>
-                <td>
-                  <form action="/article/:id/favorite/" method="post">
-                    <input type="submit"><i class="i_default fi-heart"></i></input>
-                  </form>
-                  <form action="/article/:id/edit" method="post">
-                    <input type="submit"><i class="i_default fi-pencil"></i></input>
-                  </form>
-                  <form action="/article/:id/delete/" method="post">
-                    <input type="submit"><i class="i_default fi-trash"></i></input>
-                  </form>
-                </td>
-              </tr>
-              <% break article > 20 %>
-            <% end %>
+        <!--    <% #@articles.each do |article| %>-->
+        <!--      <tr>-->
+        <!--        <td><% #article.created_at %></td>-->
+                <!--<td><% #article.name %></td>-->
+        <!--        <td><% #article.title %></td>-->
+        <!--        <td><% #article.souce %></td>-->
+        <!--        <td>-->
+        <!--          <form action="/article/:id/favorite/" method="post">-->
+        <!--            <input type="submit"><i class="i_default fi-heart"></i></input>-->
+        <!--          </form>-->
+        <!--          <form action="/article/:id/edit" method="post">-->
+        <!--            <input type="submit"><i class="i_default fi-pencil"></i></input>-->
+        <!--          </form>-->
+        <!--          <form action="/article/:id/delete/" method="post">-->
+        <!--            <input type="submit"><i class="i_default fi-trash"></i></input>-->
+        <!--          </form>-->
+        <!--        </td>-->
+        <!--      </tr>-->
+        <!--    <% #end %>-->
           </table>
         </div>
-      </div>
-          
-      <!--<div class="side-contents grid--medium">    -->
+        
+         <!--<div class="side-contents grid--medium">    -->
       <!--  <div class="latest">-->
       <!--    <h2>Latest Acticle</h2>-->
       <!--      <ul>-->
@@ -124,14 +124,12 @@
       <!--      </ul>-->
       <!--  </div>-->
       <!--</div>-->
-        
-      </div>
-    </div>
+   </div>
+
     <footer class="flex ta_left">
       <p>(c)okeihaaan 2017 all rights reserved</p>
       <p><a href="javascript:w=window.open('/info_form','','scrollbars=yes,Width=500,Height=600');w.focus();">info</a></p>
     </footer>
-  </div>
   
   <script type="text/javascript" src="/js/jquery.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
