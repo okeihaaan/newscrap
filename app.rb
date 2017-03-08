@@ -61,9 +61,11 @@ post '/sign_up' do
     password_confirmation: params[:password_confirmation]
   )
   
-  # if @user.persisted?
-  #   session[:user] = user.id
-  # end
+  if @user.persisted?
+    session[:user] = user.id
+  end
+  
+  session[:user] = user.id
   
   redirect '/'
   
@@ -81,7 +83,7 @@ post '/sign_in' do
     session[:user] = user.id
   end
   
-  redirect '/index'
+  redirect '/'
   
 end
 
@@ -102,14 +104,12 @@ post '/scrap' do
     title: params[:title],
     content: params[:content],
     souce: params[:souce],
-    url: params[:url],
     category_id: params[:name],
     # keyword: params[:keyword],
     url: params[:url],
     summary1: params[:summary1],
     summary2: params[:summary2],
     summary3: params[:summary3],
-    content: params[:content],
     comment: params[:comment],
     })
     
@@ -120,6 +120,7 @@ end
 post '/article/:id/favorite/' do
   @article = Article.find(params[:id])
   @article.favorite = !@article.favorite
+  
   @article.save
   redirect '/'
 end
@@ -134,6 +135,15 @@ end
 
 get '/article/:id/detail' do
   @article = Article.find_by({id: params[:id]})
+  @article.url = Article.url
+  @article.title = Article.title
+  @article.souce = Article.souce
+  @article.summary1 = Article.summary1
+  @article.summary2 = Article.summary2
+  @article.summary3 = Article.summary3
+  @article.comment = Article.comment
+  @article.content = Article.content
+  
   erb :detail
 end
 
@@ -165,11 +175,9 @@ post '/article/:id/update' do
     url: params[:url],
     category_id: params[:name],
     keyword: params[:keyword],
-    url: params[:url],
     summary1: params[:summary1],
     summary2: params[:summary2],
     summary3: params[:summary3],
-    content: params[:content],
     comment: params[:comment],
     favorite: params[:favorite],
   })
