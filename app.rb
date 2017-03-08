@@ -61,10 +61,6 @@ post '/sign_up' do
     password_confirmation: params[:password_confirmation]
   )
   
-  if @user.persisted?
-    session[:user] = user.id
-  end
-  
   session[:user] = user.id
   
   redirect '/'
@@ -80,7 +76,7 @@ post '/sign_in' do
   @user = User.find_by(username: params[:username])
   
   if @user && @user.authenticate(params[:password])
-    session[:user] = user.id
+    session[:user] = @user.id
   end
   
   redirect '/'
