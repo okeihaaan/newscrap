@@ -131,14 +131,6 @@ end
 
 get '/article/:id/detail' do
   @article = Article.find_by({id: params[:id]})
-  @article.url = Article.url
-  @article.title = Article.title
-  @article.souce = Article.souce
-  @article.summary1 = Article.summary1
-  @article.summary2 = Article.summary2
-  @article.summary3 = Article.summary3
-  @article.comment = Article.comment
-  @article.content = Article.content
   
   erb :detail
 end
